@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>BiJiangWang Web Application</display-name>
+  <display-name>BiJiaWang Web Application</display-name>
 
   <servlet>
     <servlet-name>mvc-dispatcher</servlet-name>
