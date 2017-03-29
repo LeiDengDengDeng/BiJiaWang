@@ -3,6 +3,7 @@ package com.bijiawang.service.LogModel;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.logging.*;
 /**
  * Created by disinuo on 17/3/25.
@@ -10,7 +11,16 @@ import java.util.logging.*;
 public class ActionLogger {
 
     private final static String actionLogSrc="/Users/disinuo/Downloads/log.txt";
-    public static void log(String info){
+
+    public static void logAfter(String actionId){
+        logBefore(actionId,null);
+    }
+    /**
+     *
+     * @param actionId
+     * @param args
+     */
+    public static void logBefore(String actionId, Map args){
         /**
          *
          * public FileHandler(String pattern,
@@ -45,7 +55,10 @@ public class ActionLogger {
         fileHandler.setLevel(Level.ALL);
         fileHandler.setFormatter(new MyLogHander());
         log.addHandler(fileHandler);
-        log.info(info);
+        log.info(actionId);
+        if(args!=null&&!args.isEmpty()){
+            log.info(args.toString());
+        }
     }
 
 }

@@ -9,7 +9,7 @@ import java.util.logging.*;
 public class ErrorLogger {
     private final static String actionLogSrc="/Users/disinuo/Downloads/errorLog.txt";
 
-    public static void log(String methodName,Exception exception){
+    public static void log(String actionId,Exception exception){
         Logger log = Logger.getLogger("lavasoft");
         log.setLevel(Level.ALL);
 
@@ -22,7 +22,7 @@ public class ErrorLogger {
         fileHandler.setLevel(Level.ALL);
         fileHandler.setFormatter(new MyLogHander());
         log.addHandler(fileHandler);
-        log.info(ErrorCode.ERROR_CODE_100.toCode()+" "+methodName+": "+exception.getLocalizedMessage());
+        log.info(ErrorCode.ERROR_CODE_100.toCode()+" "+actionId+": "+exception.getLocalizedMessage());
     }
 
 
