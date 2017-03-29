@@ -8,6 +8,7 @@ import java.util.logging.*;
  * Created by disinuo on 17/3/25.
  */
 public class ActionLogger {
+
     private final static String actionLogSrc="/Users/disinuo/Downloads/log.txt";
     public static void log(String info){
         /**
