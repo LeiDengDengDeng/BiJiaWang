@@ -1,0 +1,643 @@
+@font-face {
+    font-family: 'Copperplate Light';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../iconfont/OPTICopperplate-Light.otf);
+}
+
+.small-icon{
+    font-size:15px;
+}
+
+.navigation-frame{
+    z-index: 999;
+    /*background-color: green;*/
+}
+
+.element-frame{
+    border: none;
+}
+
+.all-elements{
+    position: absolute;
+    top: 7%;
+    left: 0px;
+    width: 100%;
+    height: 93%;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+}
+
+.footer{
+    position: relative;
+    float: left;
+    top: 10%;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    background-color: #f9f9f9;
+    /*background-color: green;*/
+}
+
+.footer h1{
+    position: relative;
+    float: left;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+    /*background-color: green;*/
+}
+
+.decoration-center {
+    position: relative;
+    float: left;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background-color: #ebebeb;
+    margin-bottom: 0px;
+    display: block;
+    clear: both;
+}
+
+.main-logo{
+    background-image: url(../images/isports-white.png);
+    background-size: 90%;
+    line-height: 50px;
+    background-repeat: no-repeat;
+}
+
+/*
+菜单栏的小三角   one 是第一项下面的...以此类推
+*/
+
+.triangle{
+    border-color: #79BD9A whitesmoke whitesmoke whitesmoke;
+    border-style:solid;
+    border-width: 10px 20px 0px 20px;
+    height: 0;
+    width: 0;
+
+}
+
+.menu-triangle{
+    position: absolute;
+    top:7%;
+    z-index: 1;
+    /*background-color: green;*/
+}
+
+.menu-triangle-one{
+    left: 29.5%;
+}
+
+.menu-triangle-two{
+    left: 39.5%;
+}
+
+.menu-triangle-three{
+    left: 49.5%;
+}
+
+.menu-triangle-four{
+    left: 59.5%;
+}
+
+.menu-triangle-five{
+    left: 69.5%;
+}
+
+.big-icon{
+    line-height: 50px;
+    color:white;
+}
+
+.navigation-right-icon{
+    position: relative;
+    float: right;
+    right: 5%;
+    width: 15%;
+    /*background-color: grey;*/
+}
+
+.navigation-right-icon i{
+    position: relative;
+    float: right;
+    font-size: 22px;
+    margin-right:8%;
+    line-height: 50px;
+}
+
+.navigation-right-icon i:hover{
+    color:#ED9282;
+}
+
+/*
+activities
+*/
+
+.activity-holder{
+    position: relative;
+    float: left;
+    left: 20%;
+    top:6%;
+    width: 60%;
+    padding: 30px 2% 30px 2%;
+    /*height: 200%;*/
+    margin-bottom: 5%;
+    border:  solid #eeeeee 1px;
+    background-color: white;
+}
+
+.search-holder{
+    position: relative;
+    float: left;
+    left: 25%;
+    top:20%;
+    width: 50%;
+    padding: 30px 2% 30px 2%;
+    height: 200px;
+    margin-bottom: 18%;
+    border:  solid #eeeeee 1px;
+    background-color: white;
+}
+
+.search-holder input{
+    position: relative;
+    float: left;
+    top:33%;
+    left: 10%;
+    width: 60%;
+    height: 16%;
+    border:  solid #ebebeb 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+.search-holder input:focus{
+    box-shadow: 0 0 7px #79BD9A;
+    -webkit-box-shadow: 0 0 7px #79BD9A;
+    -moz-box-shadow: 0 0 7px #79BD9A;
+}
+
+.search-holder button {
+    position: relative;
+    float: left;
+    top:33%;
+    left: 10%;
+    width: 15%;
+    height: 16%;
+    border: solid #79BD9A 1px;
+    outline: none;
+    background-color: #79BD9A;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    color: whitesmoke;
+}
+
+.search-holder button:hover {
+    background-color: #A8DBA8;
+}
+
+.search-holder button:active {
+    background-color: #99cd99;
+}
+
+.activity-btn-holder{
+    position: relative;
+    float: left;
+    top:5%;
+    width: 92%;
+    margin-left: 4%;
+    /*background-color: green;*/
+    /*margin-bottom: 4%;*/
+    height: 50px;
+    /*border:  solid #eeeeee 1px;*/
+}
+
+.activity-est{
+    float: left;
+    left: 0;
+    width: 10%;
+    margin-right: 3%;
+    background-color: white;
+}
+
+.activity-new{
+    float: right;
+    top: 25%;
+    right: 0;
+    width: 13%;
+    height: 50%
+    /*margin-right: 3%;*/
+}
+
+.activity-btn{
+    position: relative;
+    top: 20%;
+    height: 60%;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    background-color: white;
+    /*background-color: green;*/
+}
+
+.activity-btn:hover{
+    font-weight: 700;
+}
+
+.activity-btn:active{
+    font-weight: 700;
+}
+
+.activity-btn-selected{
+    position: relative;
+    top: 20%;
+    height: 60%;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #DE7E73;
+}
+
+.per-activity{
+    position: relative;
+    float: left;
+    top:5%;
+    width: 44%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    height: 250px;
+    border:  solid #eeeeee 1px;
+}
+
+.per-activity a{
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    height: 24px;
+    margin: 0 10px 5px 0;
+    line-height: 24px;
+    padding: 0 8px 0 18px;
+    border-radius: 0 4px 4px 0;
+    background: #eee;
+    font-size: 12px;
+    color: #333;
+    cursor: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.per-activity a:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 12px 12px 12px 0;
+    border-color: #fff transparent;
+    border-style: solid;
+}
+
+.per-activity a:after{
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 4px;
+    top: 10px;
+    left: 8px;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.activity-head-holder{
+    position: relative;
+    float: left;
+    top:5%;
+    width: 95%;
+    padding-left: 5%;
+    /*background-color: #88C366;*/
+}
+
+.activity-head-holder h1{
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.activity-head-holder h4{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    color: grey;
+}
+
+.activity-time-address-holder{
+    position: relative;
+    float: right;
+    top:5%;
+    width: 30%;
+    padding-right: 5%;
+    text-align: left;
+    /*background-color: #88C366;*/
+}
+
+.activity-time-address-holder h1{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    color: grey;
+}
+
+.photo-holder{
+    position: relative;
+    float: left;
+    top:5%;
+    left: 5%;
+    width: 90%;
+    margin-top: 10px;
+    /*height: 30%;*/
+    /*background-color: green;*/
+}
+
+.photo-item{
+    position: relative;
+    float: left;
+    top:5%;
+    /*left: 5%;*/
+    margin-right: 0.3%;
+    width: 33%;
+}
+
+.icover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#A8DBA8;
+    opacity: 0;
+}
+
+.icover:hover{
+    opacity: 0.3;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+}
+
+.photo-item img{
+    float: left;
+    left: 0%;
+    width: 100%;
+}
+
+.price-text{
+    font-size: 19px;
+    font-weight: 500;
+    color:#DE7E73;
+}
+
+.activity-description{
+    position: relative;
+    float: left;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 10%;
+    padding-top: 10px;
+
+    /*background-color: green;*/
+}
+
+.activity-description p{
+    position: relative;
+    float: left;
+    width: 70%;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 23px;
+    /*background-color: gold;*/
+}
+
+.activity-description h5{
+    position: relative;
+    float: right;
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    /*background-color: gold;*/
+}
+
+.per-activity-footer{
+    position: relative;
+    float: left;
+    top: 8%;
+    left: 5%;
+    width: 90%;
+    height: 8%;
+    padding-top: 2px;
+    /*background-color: green;*/
+}
+
+.per-activity-footer i{
+    font-size: 22px;
+    position: relative;
+    float: right;
+    right: 2%;
+    /*color: darkgray;*/
+    transition: 2s;
+    -webkit-transition: 2s; /* Safari */
+    /*-ms-transition: 2s;*/
+    -moz-transition: 2s;
+}
+
+.per-activity-footer i:hover{
+    /*right: 9%;*/
+    /*color: #bc0000;*/
+    transition: 2s;
+    -webkit-transition: 2s; /* Safari */
+    /*-ms-transition: 2s;*/
+    -moz-transition: 2s;
+    /*background-color: #88C366;*/
+    animation:mymove 2s 1;
+    -webkit-animation:mymove 2s 1; /*Safari and Chrome*/
+}
+
+/*
+  为了让心动起来
+*/
+@keyframes mymove
+{
+    from {right:2%;}
+    to {right:9%;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+    from {right:2%;}
+    to {right:9%;}
+}
+
+.text-hide{
+    display: none;
+}
+
+.text-show{
+    display: inline;
+}
+
+.per-activity-footer p{
+    font-size: 12px;
+    line-height: 22px;
+    position: relative;
+    float: right;
+    right: 10%;
+    color: #4b4b4b;
+    /*background-color: green;*/
+}
+
+.per-activity-footer-h5-none{
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 22px;
+    position: relative;
+    float: right;
+    right: 2%;
+    color: #4b4b4b;
+    /*display: none;*/
+}
+
+.per-activity-footer-h5-show{
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 22px;
+    position: relative;
+    float: right;
+    right: 2%;
+    color: #4b4b4b;
+    display: none;
+}
+
+.hover-change{/*空属性，只是为了方便使用jquery的选择器*/}
+
+
+.login-holder{
+    position: relative;
+    float: left;
+    top:6%;
+    left: 15%;
+    width: 70%;
+    /*padding: 30px 2% 30px 2%;*/
+    height: 80%;
+    margin-left: 0;
+    border:  solid #eeeeee 1px;
+    background-color: white;
+}
+
+.login-left{
+     position: relative;
+     float: left;
+     left: 0;
+     width: 61.8%;
+     height: 100%;
+     border-right: inset #eeeeee 1px;
+     /*background-color: green;*/
+ }
+
+.login-right{
+    position: relative;
+    float: right;
+    right: 0;
+    width: 38%;
+    height: 100%;
+    /*background-color: teal;*/
+}
+
+.login-right input {
+    position: relative;
+    float: left;
+    top:40%;
+    left: 12%;
+    width: 70%;
+    height: 7%;
+    margin-top: 25px;
+    border:  solid #ebebeb 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    border-radius: 2px;
+    outline: none;
+}
+
+.login-right input:focus{
+    box-shadow: 0 0 7px #79BD9A;
+    -webkit-box-shadow: 0 0 7px #79BD9A;
+    -moz-box-shadow: 0 0 7px #79BD9A;
+}
+
+.login-right button {
+    position: relative;
+    float: left;
+    top:40%;
+    left: 12%;
+    width: 76%;
+    height: 8%;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+    background-color: #79BD9A;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    color: whitesmoke;
+}
+
+.login-right button:hover {
+    background-color: #A8DBA8;
+}
+
+.login-right button:active {
+    background-color: #99cd99;
+}
+
+.login-under-input{
+    position: relative;
+    float: left;
+    top:40%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    /*background-color: green;*/
+}
