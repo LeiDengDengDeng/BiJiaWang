@@ -16,7 +16,6 @@ import java.io.IOException;
  */
 public class JDBean {
     String name="";
-//    String number="";
     String url="";
     String pictureSrc="";
     String detail="";
@@ -27,7 +26,6 @@ public class JDBean {
 
     public JDBean(Document doc, String url, String number) {
         this.url = url;
-//        this.number = number;
 
         //jd商品页分两种，选出图片地址，商品名，商品详情的选择器也不同
 
@@ -42,8 +40,6 @@ public class JDBean {
         if(pictureSrc==null){
             pictureSrc="";
         }
-
-
 
         //选出商品名
         Element name = doc.select("div.sku-name").first();
@@ -72,9 +68,9 @@ public class JDBean {
             this.detail="";
         }
 
-//        //获取价格
-//        String priceUrl = "http://p.3.cn/prices/mgets?skuIds=J_" + number + ",J_&type=1";
-//        setPrice(priceUrl);
+        //获取价格
+        String priceUrl = "http://p.3.cn/prices/mgets?skuIds=J_" + number + ",J_&type=1";
+        setPrice(priceUrl);
 
         //获取评论信息
         String commentUrl = "http://club.jd.com/productpage/p-" + number + "-s-0-t-3-p-0.html";
@@ -110,10 +106,6 @@ public class JDBean {
     public String getUrl() {
         return url;
     }
-
-//    public String getNumber() {
-//        return number;
-//    }
 
     public String getPictureSrc() {
         return pictureSrc;

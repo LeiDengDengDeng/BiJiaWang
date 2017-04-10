@@ -1,14 +1,17 @@
 package com.bijiawang.crawler;
 
-/**
- * Created by starrylemon on 2017/4/10.
- */
+
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Crawler {
 
     private String homePage;
     private JDspider js;
 
-    public Crawler(){
+    @Scheduled(cron = "0 0 0 * * ?")
+    public void start(){
         homePage="http://www.jd.com/";
         js=new JDspider();
         js.parseHomePage(homePage);

@@ -7,7 +7,8 @@ public class MainTest {
 
     public static void main(String arg[]){
 
-        new Crawler();
+        Crawler crawler=new Crawler();
+        crawler.start();
 
     }
 

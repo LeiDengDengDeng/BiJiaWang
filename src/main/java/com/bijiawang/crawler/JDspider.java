@@ -1,5 +1,6 @@
 package com.bijiawang.crawler;
 
+import com.util.ReadConfigTxt;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,13 +16,58 @@ import java.util.regex.Pattern;
 
 
 public class JDspider {
-    Set<String> allUrlset=new HashSet();
-    ArrayList<String> notVisited=new ArrayList();
-    HashMap<String,Integer> depths=new HashMap();
-    int maxDepth=3;
-    int maxthread=10;
-    int waitNum=0;
+    private Set<String> allUrlset;
+    private ArrayList<String> notVisited;
+    private HashMap<String,Integer> depths;
+    private int maxDepth;
+    private int maxthread;
+    private int waitNum;
+    private ReadConfigTxt readConfigTxt;
     public static final Object signal=new Object();
+
+    public JDspider() {
+        allUrlset=new HashSet<>();
+        notVisited=new ArrayList<>();
+        depths=new HashMap<>();
+        readConfigTxt=new ReadConfigTxt();
+
+        maxDepth=this.getMaxDepthFromConfig("src/config/crawler/depth.txt");
+        maxthread=this.getMaxthreadFromConfig("src/config/crawler/threadNum.txt");
+        waitNum=0;
+        System.out.println("kobe :"+maxDepth+"  "+maxthread);
+    }
+
+    //读取配置文件里的爬取深度
+    private int getMaxDepthFromConfig(String path){
+        int result;
+        String line=readConfigTxt.getTxtContent(path);
+        try {
+            result=Integer.parseInt(line);
+            if(result<3 || result>10 ){
+                result=3;
+            }
+        }catch (Exception e){
+            result=3;
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    //读取配置文件里的线程数
+    private int getMaxthreadFromConfig(String path){
+        int result;
+        String line=readConfigTxt.getTxtContent(path);
+        try {
+            result=Integer.parseInt(line);
+            if(result<10 || result>50){
+                result=10;
+            }
+        }catch (Exception e){
+            result=10;
+            e.printStackTrace();
+        }
+        return result;
+    }
 
     public void begin(){
         for (int i = 0; i < maxthread; i++) {
