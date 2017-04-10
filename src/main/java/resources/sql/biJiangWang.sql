@@ -40,11 +40,11 @@ CREATE TABLE `comment` (
 --  Table structure for `good`
 -- ----------------------------
 
-DROP TABLE IF EXISTS `goodInfor`;
+DROP TABLE IF EXISTS `good`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `goodInfor` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `good` (
+  `goodID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
   `url` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
   `pictureSrc` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `goodInfor` (
   `commentCount` int(11) DEFAULT '0',
   `goodRate` double DEFAULT '0',
   `date` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`goodID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
