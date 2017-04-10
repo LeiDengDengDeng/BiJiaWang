@@ -5,6 +5,10 @@
     src: url(../iconfont/OPTICopperplate-Light.otf);
 }
 
+a{
+    text-decoration: none;
+}
+
 .small-icon{
     font-size:15px;
 }
@@ -63,24 +67,23 @@
     clear: both;
 }
 
-.main-logo{
-    background-image: url(../images/isports-white.png);
-    background-size: 90%;
-    line-height: 50px;
-    background-repeat: no-repeat;
-}
+/*.main-logo{*/
+    /*background-image: url(../images/isports-white.png);*/
+    /*background-size: 90%;*/
+    /*line-height: 50px;*/
+    /*!*background-repeat: no-repeat;*!*/
+/*}*/
 
 /*
 菜单栏的小三角   one 是第一项下面的...以此类推
 */
 
 .triangle{
-    border-color: #79BD9A whitesmoke whitesmoke whitesmoke;
+    border-color: #79BD9A rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0) ;
     border-style:solid;
     border-width: 10px 20px 0px 20px;
     height: 0;
     width: 0;
-
 }
 
 .menu-triangle{
@@ -152,6 +155,103 @@ activities
     background-color: white;
 }
 
+
+.per-input{
+    position: relative;
+    float: left;
+    top:5%;
+    width: 44%;
+    margin-left: 4%;
+    margin-bottom: 3%;
+    height: 40px;
+    /*border:  solid #eeeeee 1px;*/
+    /*background-color: greenyellow;*/
+}
+
+.per-input p{
+    position: relative;
+    float: left;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.per-input input {
+    position: relative;
+    float: right;
+    /*top:40%;*/
+    margin-top: 0;
+    right: 5%;
+    width: 60%;
+    height: 60%;
+    /*margin-top: 25px;*/
+    border:  solid #ebebeb 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    border-radius: 2px;
+    outline: none;
+}
+
+.per-input input:focus{
+    box-shadow: 0 0 7px #79BD9A;
+    -webkit-box-shadow: 0 0 7px #79BD9A;
+    -moz-box-shadow: 0 0 7px #79BD9A;
+}
+
+.per-input select {
+    position: relative;
+    float: right;
+    /*top:40%;*/
+    right: 5%;
+    width: 60%;
+    height: 60%;
+    /*margin-top: 25px;*/
+    border:  solid #ebebeb 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    border-radius: 2px;
+    outline: none;
+}
+
+.per-input select:focus{
+    box-shadow: 0 0 7px #79BD9A;
+    -webkit-box-shadow: 0 0 7px #79BD9A;
+    -moz-box-shadow: 0 0 7px #79BD9A;
+}
+
+.big-bottom-button{
+    position: relative;
+    float: left;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    color:white;
+    font-size: 15px;
+    background-color: #DE7E73;
+}
+
+.big-bottom-button:hover{
+    background-color: rgb(235, 176, 150);
+}
+
+.big-bottom-button:active{
+    background-color: rgb(226, 169, 143);
+}
+
 .search-holder{
     position: relative;
     float: left;
@@ -161,8 +261,8 @@ activities
     padding: 30px 2% 30px 2%;
     height: 200px;
     margin-bottom: 18%;
-    border:  solid #eeeeee 1px;
-    background-color: white;
+    /*border:  solid #eeeeee 1px;*/
+    /*background-color: white;*/
 }
 
 .search-holder input{
@@ -189,14 +289,15 @@ activities
     -moz-box-shadow: 0 0 7px #79BD9A;
 }
 
-.search-holder button {
+.search-holder-button {
     position: relative;
     float: left;
     top:33%;
     left: 10%;
     width: 15%;
     height: 16%;
-    border: solid #79BD9A 1px;
+    border: none;
+    /*border: solid #79BD9A 1px;*/
     outline: none;
     background-color: #79BD9A;
     text-align: center;
@@ -205,12 +306,19 @@ activities
     color: whitesmoke;
 }
 
-.search-holder button:hover {
+.search-holder-button:hover {
     background-color: #A8DBA8;
 }
 
-.search-holder button:active {
+.search-holder-button:active {
     background-color: #99cd99;
+}
+
+.top-search-btn{
+    left: 5%;
+    width: 10%;
+    top:20%;
+    height: 60%;
 }
 
 .activity-btn-holder{
@@ -220,7 +328,7 @@ activities
     width: 92%;
     margin-left: 4%;
     /*background-color: green;*/
-    /*margin-bottom: 4%;*/
+    margin-bottom: 4%;
     height: 50px;
     /*border:  solid #eeeeee 1px;*/
 }
@@ -274,6 +382,35 @@ activities
     background-color: #DE7E73;
 }
 
+.normal-input {
+    position: relative;
+    float: left;
+    border:  solid #ebebeb 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    border-radius: 2px;
+    outline: none;
+}
+
+.normal-input:focus{
+    box-shadow: 0 0 7px #79BD9A;
+    -webkit-box-shadow: 0 0 7px #79BD9A;
+    -moz-box-shadow: 0 0 7px #79BD9A;
+}
+
+.top-search{
+    left: 5%;
+    top: 21%;
+    height: 58%;
+    width: 57%;
+}
+
 .per-activity{
     position: relative;
     float: left;
@@ -284,8 +421,10 @@ activities
     height: 250px;
     border:  solid #eeeeee 1px;
 }
-
-.per-activity a{
+/*
+标签
+ */
+.tag-a{
     position: relative;
     display: inline-block;
     max-width: 100%;
@@ -306,7 +445,7 @@ activities
     -webkit-box-sizing: border-box;
 }
 
-.per-activity a:before{
+.tag-a:before{
     position: absolute;
     content: '';
     top: 0;
@@ -318,7 +457,7 @@ activities
     border-style: solid;
 }
 
-.per-activity a:after{
+.tag-a:after{
     position: absolute;
     content: '';
     width: 4px;
@@ -427,7 +566,6 @@ activities
     width: 90%;
     height: 10%;
     padding-top: 10px;
-
     /*background-color: green;*/
 }
 
@@ -443,16 +581,51 @@ activities
     /*background-color: gold;*/
 }
 
-.activity-description h5{
+.activity-description a{
     position: relative;
     float: right;
     width: 20%;
     padding-left: 5px;
     padding-right: 5px;
+    text-align: center;
     font-size: 14px;
     font-weight: 300;
     line-height: 25px;
+    color:black;
     /*background-color: gold;*/
+}
+
+.activity-description a:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #DE7E73;;
+}
+
+.goods-description{
+    position: relative;
+    float: left;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 10%;
+    padding-top: 10px;
+    /*background-color: green;*/
+}
+
+.goods-description p{
+    float: left;
+    font-weight: 300;
+    margin-right: 15px;
+    font-size:16px;
+}
+
+.goods-description h6{
+    float: left;
+    font-weight: 300;
+    font-size: 14px;
+    margin-right: 15px;
+    line-height: 30px;
+    /*background-color: greenyellow;*/
 }
 
 .per-activity-footer{
@@ -640,4 +813,185 @@ activities
     width: 80%;
     height: 7%;
     /*background-color: green;*/
+}
+
+.activity-holder{
+    position: relative;
+    float: left;
+    left: 20%;
+    top:6%;
+    width: 60%;
+    padding: 30px 2% 30px 2%;
+    /*height: 200%;*/
+    margin-bottom: 1%;
+    border:  solid #eeeeee 1px;
+    background-color: white;
+}
+
+.thin-forty{
+
+    top:15%;
+    padding-top: 3%;
+    left: 30%;
+    width: 40%;
+    margin-bottom: 16%;
+}
+
+.width-ninety{
+    /*left: 4%;*/
+    margin-left: 4%;
+    width: 92%;
+}
+
+.goods-detail-head{
+    position: relative;
+    float: left;
+    width: 95%;
+    padding-left: 3%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1e8248;
+    padding-bottom: 2%;
+    /*background-color: olive;*/
+}
+
+.goods-compare{
+    list-style-type: none;
+    text-align: center;
+}
+
+.source-head{
+    position: relative;
+    float: left;
+    width: 25%;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 6px;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.source-name{
+    position: relative;
+    float: left;
+    width: 25%;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.goods-name{
+    position: relative;
+    float: left;
+    width: 25%;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.goods-price{
+    position: relative;
+    float: left;
+    width: 25%;
+    font-size: 15px;
+    font-weight: 400;
+    color:#DE7E73;
+    font-weight: 500;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.go-shopping{
+    position: relative;
+    float: left;
+    width: 25%;
+    font-size: 15px;
+    font-weight: 400;
+    color:#1e8248;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.go-shopping a {
+    color:#1e8248;
+}
+
+.per-comment{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.per-comment h6{
+    position: relative;
+    float: left;
+    text-align: left;
+    left: 5%;
+    width: 90%;
+    font-size: 12px;
+    font-weight: 300;
+    color: grey;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+.per-comment span{
+    margin-right: 10px;
+}
+
+.per-comment a{
+    color:#1e8248;
+}
+
+.per-comment p{
+    position: relative;
+    float: left;
+    text-align: left;
+    left: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    width: 90%;
+    font-size: 13px;
+    font-weight: 300;
+    padding-bottom: 8px;
+    color: black;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.goods-comment{
+    float: left;
+    left: 5%;
+    width: 90%;
+    height: 80px;
+    resize: none;
+    border: solid 1px #eeeeee;
+}
+
+.comment-btn {
+    position: relative;
+    float: right;
+    right: 2.5%;
+    margin-top: 10px;
+    width: 12%;
+    height: 30px;
+    border: none;
+    /*border: solid #79BD9A 1px;*/
+    outline: none;
+    background-color: #79BD9A;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+}
+
+.comment-btn:hover {
+    background-color: #A8DBA8;
+}
+
+.comment-btn:active {
+    background-color: #99cd99;
 }

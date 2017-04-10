@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Script Tutorials" />
+        <title>注册-HostelWorld</title>
+
+        <link href="style/main.css" rel="stylesheet" type="text/css" />
+        <link href="style/style.css" rel="stylesheet" type="text/css" />
+        <link href="style/material-icons.css" rel="stylesheet" type="text/css" />
+        <link href="style/font-awesome.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+
+    </head>
+    <body>
+    <div class="container" id="navigationBar" role="navigation">
+        <ul class="menu">
+            <img src="images/logo.png">
+            <li><a href="index.html">首页</a></li>
+            <li class="active"><a href="goods.html">商品</a>
+                <ul class="submenu">
+                    <li><a href="goods.html">所有商品</a></li>
+                    <li><a href="myFavorites.html">我的收藏</a></li>
+                </ul>
+            </li>
+            <li><a href="#">模块二</a>
+                <ul class="submenu">
+                    <li><a href="#">201</a></li>
+                    <li><a href="#">202</a></li>
+                    <li><a href="#">203</a></li>
+                </ul>
+            </li>
+            <li><a href="#">模块三</a>
+                <ul class="submenu">
+                    <li><a href="#">301</a></li>
+                    <li><a href="#">302</a></li>
+                </ul>
+            </li>
+            <li><a href="personal.html">个人信息</a></li>
+            <span class="big-icon navigation-right-icon">
+                    <i class="material-icons">exit_to_app</i>
+                    <i class="fa-middle fa-bell"></i>
+                </span>
+        </ul>
+    </div>
+
+    <!--小三角，勿删-->
+        <div class="menu-triangle menu-triangle-five triangle"></div>
+        <!--小三角结束，正文开始-->
+
+        <div class="all-elements">
+
+            <div class="activity-holder thin-forty">
+
+                <!--<div class="per-activity width-ninety">-->
+
+                <!--</div>-->
+                <div class="per-input width-ninety">
+                    <p>用户名</p>
+                    <input type="text" id="userName">
+                </div>
+
+                <div class="per-input width-ninety">
+                    <p>电话</p>
+                    <input type="text" id="userTel">
+                </div>
+                <div class="per-input width-ninety">
+                    <p>电子邮箱</p>
+                    <input type="text" id="userAddress">
+                </div>
+
+                <div class="per-input width-ninety">
+                    <button class="big-bottom-button" onclick="registerUser()">确认注册</button>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div class="decoration-center"></div>
+                <h1>
+                    Copyright &copy; 2016 - 2017 Hostel World. All Rights Reserved.
+                </h1>
+            </div>
+        </div>
+
+    <script type="text/javascript">
+
+
+
+        function registerUser() {
+//            window.location.href="index.html";
+
+            var userName = document.getElementById("userName");
+            var userPwd = document.getElementById("userPwd");
+            var userTel = document.getElementById("userTel");
+            var userAddress = document.getElementById("userAddress");
+            var userAccount = document.getElementById("userAccount");
+
+
+            $.ajax({
+                url: "/register/"+userName.value,
+                type: "GET",
+                data: {
+                    password:userPwd.value,
+                    tel:userTel.value,
+                    address:userAddress.value,
+                    card:userAccount.value
+
+        },
+                dataType: 'JSON',
+                async: false,
+                success: function (data) {
+                   alert("注册成功！");
+                   window.location.href="/home";
+                }
+            });
+
+
+
+
+            
+        }
+    </script>
+    </body>
+</html>
