@@ -34,24 +34,27 @@ CREATE TABLE `comment` (
   CONSTRAINT `FKc8rw5dl8r0b65whr1uaextqok` FOREIGN KEY (`goodID`) REFERENCES `good` (`goodID`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`),
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`goodID`) REFERENCES `good` (`goodID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT  CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `good`
 -- ----------------------------
-DROP TABLE IF EXISTS `good`;
-CREATE TABLE `good` (
-  `goodID` int(11) NOT NULL,
-  `goodName` varchar(50) NOT NULL,
-  `goodPrice` double NOT NULL,
-  `goodStoreName` varchar(50) NOT NULL,
-  `goodStoreHref` varchar(50) NOT NULL,
-  `type` varchar(50) NOT NULL,
-  `brand` varchar(50) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  PRIMARY KEY (`goodID`),
-  KEY `goodID` (`goodID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `goodInfor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `goodInfor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `url` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pictureSrc` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `detail` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `price` varchar(64) COLLATE utf8_unicode_ci DEFAULT '0',
+  `commentCount` int(11) DEFAULT '0',
+  `goodRate` double DEFAULT '0',
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `goodshield`
@@ -61,7 +64,7 @@ CREATE TABLE `goodshield` (
   `goodID` int(11) NOT NULL,
   PRIMARY KEY (`goodID`),
   CONSTRAINT `goodshield_ibfk_1` FOREIGN KEY (`goodID`) REFERENCES `good` (`goodID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `goodsorder`
@@ -81,7 +84,7 @@ CREATE TABLE `goodsorder` (
   CONSTRAINT `FKi973tidds3eddqknfe96ik02v` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`),
   CONSTRAINT `goodsorder_ibfk_1` FOREIGN KEY (`goodID`) REFERENCES `good` (`goodID`),
   CONSTRAINT `goodsorder_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `ipblacklist`
@@ -90,7 +93,7 @@ DROP TABLE IF EXISTS `ipblacklist`;
 CREATE TABLE `ipblacklist` (
   `ipaddress` varchar(45) NOT NULL,
   PRIMARY KEY (`ipaddress`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `iprecord`
@@ -102,7 +105,7 @@ CREATE TABLE `iprecord` (
   `totaltimes` int(11) DEFAULT '0',
   `lastvisittime` datetime DEFAULT NULL,
   PRIMARY KEY (`idaddress`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `user`
@@ -116,6 +119,7 @@ CREATE TABLE `user` (
   `phone` varchar(50) NOT NULL,
   PRIMARY KEY (`userID`),
   KEY `userID` (`userID`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 SET FOREIGN_KEY_CHECKS = 1;
