@@ -135,7 +135,6 @@ public class JDBean {
     public String toString() {
 
         return  "name='" + name + '\'' +
-//                ", number='" + number + '\'' +
                 ", url='" + url + '\'' +
                 ", pictureSrc='" + pictureSrc + '\'' +
                 ", detail='" + detail + '\'' +

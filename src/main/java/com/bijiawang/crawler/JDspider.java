@@ -1,12 +1,17 @@
 package com.bijiawang.crawler;
 
+import com.model.GoodEntity;
+import com.repository.GoodRepository;
+import com.util.MyDate;
 import com.util.ReadConfigTxt;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,6 +21,7 @@ import java.util.regex.Pattern;
 
 
 public class JDspider {
+
     private Set<String> allUrlset;
     private ArrayList<String> notVisited;
     private HashMap<String,Integer> depths;
@@ -23,7 +29,11 @@ public class JDspider {
     private int maxthread;
     private int waitNum;
     private ReadConfigTxt readConfigTxt;
+
     public static final Object signal=new Object();
+
+    @Autowired
+    public GoodRepository goodRepository;
 
     public JDspider() {
         allUrlset=new HashSet<>();
@@ -34,6 +44,7 @@ public class JDspider {
         maxDepth=this.getMaxDepthFromConfig("src/config/crawler/depth.txt");
         maxthread=this.getMaxthreadFromConfig("src/config/crawler/threadNum.txt");
         waitNum=0;
+
         System.out.println("kobe :"+maxDepth+"  "+maxthread);
     }
 
@@ -119,9 +130,24 @@ public class JDspider {
         Pattern pattern=Pattern.compile(".*?item.jd.com/(.+?).html");
         Matcher matcher=pattern.matcher(url);
         String number;
+
+        Date today= MyDate.getTodayDateSQL();
+
         if (matcher.find()&&(number=matcher.group(1))!=null){
 //            System.out.println("开始解析编号为"+number+"的商品");
             JDBean jc=new JDBean(doc,url,number);
+
+            GoodEntity goodEntity=new GoodEntity();
+            goodEntity.setName(jc.getName());
+            goodEntity.setUrl(jc.getUrl());
+            goodEntity.setPictureSrc(jc.getPictureSrc());
+            goodEntity.setDetail(jc.getDetail());
+            goodEntity.setPrice(jc.getPrice()+"");
+            goodEntity.setCommentCount(jc.getCommentCount());
+            goodEntity.setGoodRate(jc.getGoodRate());
+            goodEntity.setDate(today);
+            goodRepository.saveAndFlush(goodEntity);
+
 
 //            if (DBcontrol.insertToDB(jc)){
 //                System.out.println("编号为："+number+"的商品信息已存入数据库");
