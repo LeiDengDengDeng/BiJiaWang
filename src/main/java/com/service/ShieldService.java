@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by liying on 2017/4/11.
  */
-public interface SearchService {
+public interface ShieldService {
 
-     List<GoodEntity> analyse(String[] keywords);
+     List<GoodEntity> shield (List<GoodEntity> GoodsEntity);
 }

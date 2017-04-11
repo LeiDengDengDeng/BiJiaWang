@@ -9,12 +9,11 @@ import java.util.List;
 /**
  * Created by liying on 2017/4/11.
  */
-@Service("searchService")
+@Service("shiledService")
 @Transactional
-public class SearchServiceImpl implements SearchService{
+public class ShieldServiceImpl implements ShieldService {
     @Override
-    public List<GoodEntity> analyse(String[] keywords) {
-
+    public List<GoodEntity> shield(List<GoodEntity> GoodsEntity) {
         return null;
     }
 }

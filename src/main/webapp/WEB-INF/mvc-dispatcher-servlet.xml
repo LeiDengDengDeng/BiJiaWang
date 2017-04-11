@@ -27,6 +27,9 @@
     <!--指明 controller 所在包，并扫描其中的注解-->
     <context:component-scan base-package="com.controller"/>
 
+    <!--指明 service 所在包，并扫描其中的注解-->
+    <context:component-scan base-package="com.service"/>
+
     <!-- 静态资源(js、image等)的访问 -->
     <mvc:default-servlet-handler/>
 
