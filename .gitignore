@@ -74,3 +74,8 @@ $RECYCLE.BIN/
 
 workspace.xml
 BiJiaWang.iml
+compiler.xml
+misc.xml
+vcs.xml
+modules.xml
+
