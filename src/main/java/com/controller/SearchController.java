@@ -16,7 +16,7 @@ import java.util.List;
  * Created by liying on 2017/4/11.
  */
 @Controller
-@RequestMapping("/search")
+@RequestMapping
 public class SearchController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class SearchController {
     @Autowired
     private ShieldService shieldService;
 
-    @RequestMapping
+    @RequestMapping("/search")
     public List<GoodEntity> searchGoods(String keyword){
         //todo 从同义词列表获取同义词
         String[] keywords=null;
@@ -44,7 +44,7 @@ public class SearchController {
 
     }
 
-    @RequestMapping
+    @RequestMapping("/sort")
     public List<GoodEntity> sortGoods(List<GoodEntity> goodEntities,SortStrategy sortStrategy) {
         //将搜索获得的商品进行排序
         goodEntities = sortService.sort(goodEntities, sortStrategy);
