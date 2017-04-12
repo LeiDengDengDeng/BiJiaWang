@@ -53,6 +53,9 @@
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:6.0.0" />
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:6.0.0" />
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:6.0.0" />
+          <element id="archive" name="BiJiaWang-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="BiJiaWang" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">
