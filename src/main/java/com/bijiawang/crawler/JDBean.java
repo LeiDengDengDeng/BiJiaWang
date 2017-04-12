@@ -11,6 +11,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Element;
+
 /**
  * Created by lenovo on 2017/3/25.
  */
