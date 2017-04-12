@@ -78,4 +78,4 @@ compiler.xml
 misc.xml
 vcs.xml
 modules.xml
-
+*.xml
