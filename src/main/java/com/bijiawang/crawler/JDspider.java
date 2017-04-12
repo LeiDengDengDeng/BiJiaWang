@@ -41,8 +41,8 @@ public class JDspider {
         depths=new HashMap<>();
         readConfigTxt=new ReadConfigTxt();
 
-        maxDepth=this.getMaxDepthFromConfig("src/config/crawler/depth.txt");
-        maxthread=this.getMaxthreadFromConfig("src/config/crawler/threadNum.txt");
+        maxDepth=this.getMaxDepthFromConfig("src/main/java/config/depth.txt");
+        maxthread=this.getMaxthreadFromConfig("src/main/java/config/threadNum.txt");
         waitNum=0;
 
         System.out.println("kobe :"+maxDepth+"  "+maxthread);
