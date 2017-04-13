@@ -14,10 +14,15 @@ public class CommentServiceImpl implements CommentService{
     @Autowired
     private CommentRepository commentRepository;
 
+//    @Override
+//    public List<CommentEntity> getAllComments(int id) {
+//        List<CommentEntity> result=commentRepository.getComment(id);
+//        return  result;
+//    }
+
     @Override
     public List<CommentEntity> getAllComments(int id) {
-        List<CommentEntity> result=commentRepository.getComment(id);
-        return  result;
+        return null;
     }
 
     @Override
@@ -31,6 +36,16 @@ public class CommentServiceImpl implements CommentService{
         commentRepository.saveAndFlush(comment);
 
         return true;
+    }
+
+    @Override
+    public List<CommentEntity> getAllCommentsByUser(int userid) {
+        return null;
+    }
+
+    @Override
+    public CommentEntity getComment(int userid, int goodid) {
+        return null;
     }
 
 }
