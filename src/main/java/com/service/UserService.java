@@ -11,5 +11,5 @@ public interface UserService {
     UserEntity getUserById(int id);
 
     //登陆
-    boolean login(String username, String password);
+    String login(String username, String password);
 }

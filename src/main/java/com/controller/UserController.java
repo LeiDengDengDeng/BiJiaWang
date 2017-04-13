@@ -19,7 +19,7 @@ public class UserController {
 
     //登陆
     @RequestMapping("/userLogin")
-    public boolean userLogin(String userName, String userPassword){
+    public String userLogin(String userName, String userPassword){
 //        if(userName=="commonUser1"){
 
 //        }else if(userName=="admin1"){
