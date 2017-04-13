@@ -1,12 +1,10 @@
 package com.service;
 
 import com.model.CommentEntity;
-import com.model.GoodEntity;
 import com.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by 蒋香香 on 2017/4/13.
@@ -17,8 +15,8 @@ public class CommentServiceImpl implements CommentService{
     private CommentRepository commentRepository;
 
     @Override
-    public List<CommentEntity> getAllComments(GoodEntity goodEntity) {
-        List<CommentEntity> result=commentRepository.findAll();
+    public List<CommentEntity> getAllComments(int id) {
+        List<CommentEntity> result=commentRepository.getComment(id);
         return  result;
     }
 
@@ -28,8 +26,11 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
-    public CommentEntity saveComment(CommentEntity comment) {
-        return commentRepository.saveAndFlush(comment);
+    public boolean saveComment(CommentEntity comment) {
+
+        commentRepository.saveAndFlush(comment);
+
+        return true;
     }
 
 }
