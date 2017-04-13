@@ -20,7 +20,7 @@ public class UserController {
 
     //登陆
     @RequestMapping("/userLogin")
-    public Map<String, Object> userLogin(String userName, String userPassword){
+    public boolean userLogin(String userName, String userPassword){
 //        if(userName=="commonUser1"){
 
 //        }else if(userName=="admin1"){
@@ -39,13 +39,4 @@ public class UserController {
     }
 
 
-    //管理员管理水军
-    @RequestMapping("/disableUser")
-    public Map<String, Object> disableUser(int userId){
-        UserEntity userEntity= userService.getUserById(userId);
-        if (userService==null ){
-            System.out.println("user service null");
-        }
-        return   userService.deleteUser(userId);
-    }
 }
