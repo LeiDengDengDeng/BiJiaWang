@@ -17,7 +17,7 @@ public class AddCommentCommand extends Command{
 
     @Override
     protected ResultMessage doCommand(){
-        this.comment=commentService.saveComment(this.comment);
+        commentService.saveComment(this.comment);
         return null;
     }
 
