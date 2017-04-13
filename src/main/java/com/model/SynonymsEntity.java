@@ -11,6 +11,7 @@ public class SynonymsEntity {
     private int id;
     private String synonymsWord;
     private String word;
+    private int groupid;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -62,5 +63,15 @@ public class SynonymsEntity {
         result = 31 * result + (synonymsWord != null ? synonymsWord.hashCode() : 0);
         result = 31 * result + (word != null ? word.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "groupid", nullable = false)
+    public int getGroupid() {
+        return groupid;
+    }
+
+    public void setGroupid(int groupid) {
+        this.groupid = groupid;
     }
 }
