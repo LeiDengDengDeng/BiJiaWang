@@ -20,4 +20,5 @@ public interface CommentService {
 
     //查看某一用户对当前产品的评论
     CommentEntity getComment(int userid,int goodid);
+
 }
