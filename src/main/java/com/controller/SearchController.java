@@ -34,9 +34,9 @@ public class SearchController {
 
     @ResponseBody
     @RequestMapping(value="/search")
-    public List<GoodEntity> searchGoods(String keyword){
+    public List<GoodEntity> searchGoods(String keyword,SortStrategy sortStrategy){
         //从同义词列表获取同义词
-        String[] keywords=null;
+        String[] keywords={"iphone"};
 
         //将列表中的所有词交给analyse分析
         List<GoodEntity> goodEntities= searchService.analyse(keywords);
@@ -44,13 +44,10 @@ public class SearchController {
         //删除列表中的负面商品
         goodEntities=shieldService.shield(goodEntities);
 
-        return goodEntities;
-
-    }
-    @ResponseBody
-    @RequestMapping(value="/sort")
-    public List<GoodEntity> sortGoods(List<GoodEntity> goodEntities,SortStrategy sortStrategy) {
-        //将搜索获得的商品进行排序
+        if(sortStrategy==null){
+            return goodEntities;
+        }
+        //排序
         goodEntities = sortService.sort(goodEntities, sortStrategy);
 
         return goodEntities;
