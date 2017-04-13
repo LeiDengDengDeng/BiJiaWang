@@ -24,7 +24,7 @@ public class SearchGoodsCommand extends Command {
     @Override
     protected ResultMessage doCommand(){
         //TODO 从同义词列表获取同义词
-        String[] keywords=null;
+       List<String> keywords=null;
         //将列表中的所有词交给analyse分析
         List<GoodEntity> goodEntities= searchService.analyse(keywords);
 
