@@ -14,17 +14,11 @@ public class Command {
     protected Map<String,Object> args=new HashMap<String,Object>();
     public ResultMessage execute(){
         ResultMessage msg;
-        initCommandId();
         logBeforeCommand();
         msg=doCommand();
         logAfterCommand();
         return msg;
     }
-    /**
-     * 子类要重写！
-     *子类要初始化自己的commandId！就是对应的service方法的全名
-     */
-    protected void initCommandId(){}
 
     /**
      * 子类要重写！
