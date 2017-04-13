@@ -58,16 +58,6 @@ public class CommentController{
         return commentService.getAllComments(goodByGoodId);
     }
 
-    //删除评论
-    @RequestMapping("/deleteComment")
-    public Map<String, Object> deleteComment(int commentID){
-        CommentEntity comment= commentService.getCommentById(commentID);
-        if (commentService==null ){
-            System.out.println("comment service null");
-        }
-        return  commentService.deleteComment(commentID);
-    }
-
 
 //    public boolean sensitiveWords(String str){
 //        return false;
