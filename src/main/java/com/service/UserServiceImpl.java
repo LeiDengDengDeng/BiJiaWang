@@ -1,7 +1,6 @@
 package com.service;
 
 import com.model.UserEntity;
-import com.repository.UserRepository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,7 @@ import java.util.Map;
 /**
  * Created by 蒋香香 on 2017/4/13.
  */
-public class UserServiceImpl1 implements UserService{
+public class UserServiceImpl implements UserService{
 
     private UserRepository userRepository;
 
@@ -47,7 +46,6 @@ public class UserServiceImpl1 implements UserService{
 
     @Override
     public Map<String, Object> deleteUser(int id) {
-
         return userRepository.deleteUser(id);
     }
 }
