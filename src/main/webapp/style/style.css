@@ -265,7 +265,7 @@ activities
     /*background-color: white;*/
 }
 
-.search-holder input[text]{
+.search-holder input{
     position: relative;
     float: left;
     top:33%;
@@ -283,11 +283,38 @@ activities
     outline: none;
 }
 
-.search-holder input[text]:focus{
+.search-holder input:focus{
     box-shadow: 0 0 7px #79BD9A;
     -webkit-box-shadow: 0 0 7px #79BD9A;
     -moz-box-shadow: 0 0 7px #79BD9A;
 }
+
+.search-holder a{
+    text-align: center;
+    width: 100%;
+    font-size: 56px;
+    color: #DE7E73;
+    margin-bottom: 20px;
+}
+
+.search-holder h6{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    color: #DE7E73;
+    /*background-color: greenyellow;*/
+}
+
+.server-text{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    color: #99cd99;
+    /*background-color: greenyellow;*/
+}
+
 
 .search-holder-button {
     position: relative;
