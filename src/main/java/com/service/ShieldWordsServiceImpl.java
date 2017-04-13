@@ -5,6 +5,8 @@ package com.service;
  */
 public class ShieldWordsServiceImpl implements ShieldWordsService {
 
+
+
     @Override
     public boolean addShieldWords() {
         return false;
