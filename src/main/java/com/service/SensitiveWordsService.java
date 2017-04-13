@@ -14,4 +14,6 @@ public interface SensitiveWordsService {
     public boolean deleteShieldWords(SensitiveEntity sensitiveEntity);
 
     public List findAll();
+
+    public int getCount();
 }

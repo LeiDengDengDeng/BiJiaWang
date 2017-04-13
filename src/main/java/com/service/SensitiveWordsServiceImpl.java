@@ -33,4 +33,9 @@ public class SensitiveWordsServiceImpl implements SensitiveWordsService {
     public List findAll() {
         return sensitiveRepository.findAll();
     }
+
+    @Override
+    public int getCount() {
+        return (int) sensitiveRepository.count();
+    }
 }

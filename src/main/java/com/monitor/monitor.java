@@ -13,9 +13,9 @@ public class monitor {
     private final long interval = 600000; //10min
     private final int timeOut = 10000;
     private final String ipAddress = "127.0.0.0";
+    private boolean status = true;
 
-    public void monitor(){
-
+    public boolean monitor(){
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -26,8 +26,12 @@ public class monitor {
                         if(!InetAddress.getByName(ipAddress).isReachable(timeOut)){
                             systemException.solve();
                             System.out.println("error!!!!!!!!!");
+                            status = false;
+                            break;
+
+                        }else {
+                            System.out.println("success.............");
                         }
-                        System.out.println("success.............");
                         try {
                             Thread.sleep(interval);
                         } catch (InterruptedException e) {
@@ -41,5 +45,6 @@ public class monitor {
         };
         Thread thread = new Thread(runnable);
         thread.start();
+        return status;
     }
 }

@@ -3,9 +3,7 @@ package com.controller;
 import com.model.SensitiveEntity;
 import com.model.SynonymsEntity;
 import com.service.SensitiveWordsService;
-import com.service.SensitiveWordsServiceImpl;
 import com.service.SynonymsService;
-import com.service.SynonymsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,16 +18,16 @@ import java.util.List;
 public class WordsController {
 
     @Autowired
-    SensitiveWordsService sensitiveWordsService = new SensitiveWordsServiceImpl();
+    private SensitiveWordsService sensitiveWordsService;
 
     @Autowired
-    SynonymsService synonymsService = new SynonymsServiceImpl();
+    private SynonymsService synonymsService;
 
     @RequestMapping("/addSensitiveWords")
-    public boolean addSensitiveWords(String words,int id){
+    public boolean addSensitiveWords(String words){
         SensitiveEntity sensitiveEntity = new SensitiveEntity();
         sensitiveEntity.setSensitiveWord(words);
-        sensitiveEntity.setId(id);
+        sensitiveEntity.setId(sensitiveWordsService.getCount()+1);
         sensitiveWordsService.addShieldWords(sensitiveEntity);
         return true;
 
@@ -50,10 +48,10 @@ public class WordsController {
 
 
     @RequestMapping("/addSynonymsWords")
-    public boolean synonymsWords(String words,int id){
+    public boolean synonymsWords(String words){
         SynonymsEntity synonymsEntity = new SynonymsEntity();
         synonymsEntity.setSynonymsWord(words);
-        synonymsEntity.setId(id);
+        synonymsEntity.setId(synonymsService.getCount()+1);
         synonymsService.addSynonyms(synonymsEntity);
         return true;
     }
