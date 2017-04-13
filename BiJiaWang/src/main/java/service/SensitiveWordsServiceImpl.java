@@ -1,0 +1,36 @@
+package service;
+
+import model.SensitiveEntity;
+import repository.SensitiveRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+/**
+ * Created by caosh on 2017/4/13.
+ */
+@Service("shieldWordsService")
+@Transactional
+public class SensitiveWordsServiceImpl implements SensitiveWordsService {
+    @Autowired
+    SensitiveRepository sensitiveRepository;
+
+    @Override
+    public boolean addShieldWords(SensitiveEntity sensitiveEntity) {
+        sensitiveRepository.save(sensitiveEntity);
+        return true;
+    }
+
+    @Override
+    public boolean deleteShieldWords(SensitiveEntity sensitiveEntity) {
+        sensitiveRepository.delete(sensitiveEntity.getId());
+        return true;
+    }
+
+    @Override
+    public List findAll() {
+        return sensitiveRepository.findAll();
+    }
+}
