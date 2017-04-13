@@ -2,14 +2,12 @@ package com.bijiawang.service.commands;
 
 import com.Strategy.SortStrategy;
 import com.bijiawang.service.Command;
-import com.bijiawang.service.LogModel.ActionLogger;
 import com.bijiawang.service.commands.util.ResultMessage;
 import com.model.GoodEntity;
 import com.service.SortService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by disinuo on 17/3/26.
