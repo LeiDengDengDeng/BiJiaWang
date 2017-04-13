@@ -26,7 +26,7 @@ public class SearchServiceImpl implements SearchService{
         List<GoodEntity> goodEntities = new ArrayList<>();
         //匹配关键词
         for (String key:keywords){
-            //todo 获得repository的中搜索的列表
+            //获得repository的中搜索的列表
             goodEntities.addAll(goodRepository.searchGood(key));
             goodEntities.addAll(goodRepository.searchGoodByDetail(key));
 
@@ -34,4 +34,5 @@ public class SearchServiceImpl implements SearchService{
             return goodEntities;
 
     }
+
 }
