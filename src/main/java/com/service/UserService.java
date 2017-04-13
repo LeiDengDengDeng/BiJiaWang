@@ -13,8 +13,5 @@ public interface UserService {
     UserEntity getUserById(int id);
 
     //登陆
-    Map<String, Object> login(String username, String password);
-
-    //删除用户
-    Map<String, Object> deleteUser(int id);
+    boolean login(String username, String password);
 }

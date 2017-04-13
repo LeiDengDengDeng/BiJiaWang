@@ -15,6 +15,4 @@ public interface CommentService {
     CommentEntity getCommentById(int id);
     //保存发表的评论
     CommentEntity saveComment(CommentEntity comment);
-    //删除评论
-    Map<String, Object> deleteComment(int id);
 }
