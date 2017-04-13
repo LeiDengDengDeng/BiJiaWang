@@ -12,6 +12,8 @@ public class GoodsorderEntity {
     private int orderId;
     private String price;
     private String amount;
+    private int userId;
+    private int goodId;
     private Timestamp buytime;
 
     @Id
@@ -45,6 +47,26 @@ public class GoodsorderEntity {
     }
 
     @Basic
+    @Column(name = "userID", nullable = false)
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    @Basic
+    @Column(name = "goodID", nullable = false)
+    public int getGoodId() {
+        return goodId;
+    }
+
+    public void setGoodId(int goodId) {
+        this.goodId = goodId;
+    }
+
+    @Basic
     @Column(name = "buytime", nullable = true)
     public Timestamp getBuytime() {
         return buytime;
@@ -62,6 +84,8 @@ public class GoodsorderEntity {
         GoodsorderEntity that = (GoodsorderEntity) o;
 
         if (orderId != that.orderId) return false;
+        if (userId != that.userId) return false;
+        if (goodId != that.goodId) return false;
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
         if (amount != null ? !amount.equals(that.amount) : that.amount != null) return false;
         if (buytime != null ? !buytime.equals(that.buytime) : that.buytime != null) return false;
@@ -74,6 +98,8 @@ public class GoodsorderEntity {
         int result = orderId;
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (amount != null ? amount.hashCode() : 0);
+        result = 31 * result + userId;
+        result = 31 * result + goodId;
         result = 31 * result + (buytime != null ? buytime.hashCode() : 0);
         return result;
     }
