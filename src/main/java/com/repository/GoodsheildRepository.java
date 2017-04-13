@@ -7,7 +7,10 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by luoxuechun on 2017/4/13.
  */
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 @Repository
 public interface GoodsheildRepository extends JpaRepository<GoodshieldEntity,Integer> {
 }
