@@ -19,13 +19,8 @@ public class UserController {
 
     //登陆
     @RequestMapping("/userLogin")
-    public boolean userLogin(String userName, String userPassword){
-//        if(userName=="commonUser1"){
-
-//        }else if(userName=="admin1"){
-
-//        }
-        return userService.login(userName,userPassword);
+    public String userLogin(HttpSession httpSession,String userName, String userPassword){
+        return userService.login(httpSession,userName,userPassword);
     }
 
     //查看用户信息

@@ -61,6 +61,16 @@
             async: false,
             success: function (data) {
                 alert(data);
+                if(data=="管理员"){
+                    window.location.href="similarWords.html";
+                }else if(data=="系统管理员"){
+                    window.location.href="serverView.html";
+                }else if(data=="小明"){
+                    window.location.href="goods.html";
+                }else{
+                    alert("用户信息无效！请重试！");
+                }
+
             }
         });
 

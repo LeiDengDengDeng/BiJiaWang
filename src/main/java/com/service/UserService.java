@@ -2,6 +2,8 @@ package com.service;
 
 import com.model.UserEntity;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by 蒋香香 on 2017/4/13.
  */
@@ -11,5 +13,5 @@ public interface UserService {
     UserEntity getUserById(int id);
 
     //登陆
-    boolean login(String username, String password);
+    String login(HttpSession httpSession, String username, String password);
 }
