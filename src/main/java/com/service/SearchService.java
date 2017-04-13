@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface SearchService {
 
-     List<GoodEntity> analyse(String[] keywords);
+     List<GoodEntity> analyse(List<String> keywords);
 }
