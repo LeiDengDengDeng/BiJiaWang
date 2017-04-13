@@ -41,11 +41,16 @@ public class JDspider {
         depths=new HashMap<>();
         readConfigTxt=new ReadConfigTxt();
 
-        maxDepth=this.getMaxDepthFromConfig("depth.txt");
-        maxthread=this.getMaxthreadFromConfig("threadNum.txt");
+//        maxDepth=this.getMaxDepthFromConfig("../depth.txt");
+//        maxthread=this.getMaxthreadFromConfig("../threadNum.txt");
+
+        maxDepth=3;
+        maxthread=10;
+
         waitNum=0;
 
         System.out.println("kobe :"+maxDepth+"  "+maxthread);
+        System.out.println(goodRepository==null);
     }
 
     //读取配置文件里的爬取深度
@@ -146,6 +151,7 @@ public class JDspider {
             goodEntity.setCommentCount(jc.getCommentCount());
             goodEntity.setGoodRate(jc.getGoodRate());
             goodEntity.setDate(today);
+
             goodRepository.saveAndFlush(goodEntity);
 
 
