@@ -18,13 +18,13 @@ public class SensitiveWordsServiceImpl implements SensitiveWordsService {
     SensitiveRepository sensitiveRepository;
 
     @Override
-    public boolean addShieldWords(SensitiveEntity sensitiveEntity) {
+    public boolean addSensitiveWords(SensitiveEntity sensitiveEntity) {
         sensitiveRepository.save(sensitiveEntity);
         return true;
     }
 
     @Override
-    public boolean deleteShieldWords(SensitiveEntity sensitiveEntity) {
+    public boolean deleteSensitiveWords(SensitiveEntity sensitiveEntity) {
         sensitiveRepository.delete(sensitiveEntity.getId());
         return true;
     }
@@ -37,5 +37,10 @@ public class SensitiveWordsServiceImpl implements SensitiveWordsService {
     @Override
     public int getCount() {
         return (int) sensitiveRepository.count();
+    }
+
+    @Override
+    public SensitiveEntity getOne(int id) {
+        return sensitiveRepository.findOne(id);
     }
 }

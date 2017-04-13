@@ -18,4 +18,6 @@ public interface SynonymsService {
     public List findSynonyms(String word);
 
     public int getCount();
+
+    public SynonymsEntity getOne(int id);
 }
