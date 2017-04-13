@@ -28,10 +28,10 @@ public class CommentController{
         if (commentService==null ){
             System.out.println("comment service null");
         }
-        comment.setCommentId(commentID);
-        comment.setGoodByGoodId(goodByGoodId);
-        comment.setUserByUserId(userByUserId);
-        comment.setContent(content);
+//        comment.setCommentId(commentID);
+//        comment.setGoodByGoodId(goodByGoodId);
+//        comment.setUserByUserId(userByUserId);
+//        comment.setContent(content);
         comment.setTime(new Timestamp(System.currentTimeMillis()));
 
         List<CommentEntity> commentList=null;
