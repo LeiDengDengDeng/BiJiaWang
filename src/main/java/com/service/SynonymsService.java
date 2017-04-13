@@ -1,13 +1,17 @@
 package com.service;
 
+import com.model.SynonymsEntity;
+
+import java.util.List;
+
 /**
  * Created by caosh on 2017/4/13.
  */
 public interface SynonymsService {
 
-    public boolean addSynonyms();
+    public boolean addSynonyms(SynonymsEntity synonymsEntity);
 
-    public boolean deleteSynonyms();
+    public boolean deleteSynonyms(SynonymsEntity synonymsEntity);
 
-    public boolean findAll();
+    public List findAll();
 }
