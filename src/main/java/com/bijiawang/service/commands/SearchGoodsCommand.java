@@ -14,8 +14,7 @@ import java.util.List;
  * Created by disinuo on 17/4/13.
  */
 public class SearchGoodsCommand extends Command {
-    private final String id="service.commands.SearchGoodsCommand";
-
+//
     @Autowired
     private SearchService searchService;
     @Autowired
@@ -45,4 +44,8 @@ public class SearchGoodsCommand extends Command {
     }
 
 
+    @Override
+    protected void initCommandId() {
+        commandId="service.commands.SearchGoodsCommand";
+    }
 }

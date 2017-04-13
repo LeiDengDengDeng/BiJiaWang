@@ -14,6 +14,7 @@ public class Command {
     protected Map<String,Object> args=new HashMap<String,Object>();
     public ResultMessage execute(){
         ResultMessage msg;
+        initCommandId();
         logBeforeCommand();
         msg=doCommand();
         logAfterCommand();
@@ -28,6 +29,7 @@ public class Command {
 
         return null;
     }
+    protected void initCommandId(){}
 
 
     private void logBeforeCommand(){
@@ -35,7 +37,7 @@ public class Command {
     }
 
     private void logAfterCommand(){
-        ActionLogger.logAfter(commandId);
+        ActionLogger.logAfter(this.commandId);
 
     }
 }

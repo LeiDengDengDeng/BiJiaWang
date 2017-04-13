@@ -1,8 +1,10 @@
 package com.bijiawang.service.LogModel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.*;
 
@@ -11,14 +13,21 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import com.bijiawang.service.commands.SearchGoodsCommand;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
+
 /**
  * Created by disinuo on 17/3/25.
  */
 public class ActionLogger {
     public static void main(String[] args){
-        ActionLogger.logAfter("try~~~");
+//        Map <String,Object>params=new HashMap();
+//        params.put("id","user01");
+//        params.put("name","user01");
+//        params.put("age","18");
+        SearchGoodsCommand cmd=new SearchGoodsCommand("卷纸");
+        cmd.execute();
+
     }
     private final static String actionLogSrc="actionLog.txt";
     private static boolean testMode=true;
@@ -45,7 +54,6 @@ public class ActionLogger {
      */
     public static void logBefore(String actionId, Map args){
         if(!testMode) return;
-        System.out.print("Logging Action!");
         /**
          *
          * public FileHandler(String pattern,
@@ -68,9 +76,6 @@ public class ActionLogger {
          */
         Logger log = Logger.getLogger("lavasoft");
         log.setLevel(Level.ALL);
-        Logger log2 = Logger.getLogger("lavasoft.blog");
-//            log2.setLevel(Level.WARNING);
-
         FileHandler fileHandler = null;
         try {
             fileHandler = new FileHandler(actionLogSrc ,10000,11,true);
@@ -78,21 +83,29 @@ public class ActionLogger {
             e.printStackTrace();
         }
         fileHandler.setLevel(Level.ALL);
-        fileHandler.setFormatter(new MyLogHander());
+        fileHandler.setFormatter(new CommandIdLogHandler());
         log.addHandler(fileHandler);
         log.info(actionId);
         if(args!=null&&!args.isEmpty()){
+            fileHandler.setFormatter(new ParamsLogHandler());
             log.info(args.toString());
         }
     }
 
 }
-class MyLogHander extends Formatter {
+class CommandIdLogHandler extends Formatter {
     @Override
     public String format(LogRecord record) {
         Date date = new Date();
         SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String d = sd.format(date);
-        return "[" + d + "]"  + "[" +record.getLevel() + "]" + record.getClass() + " :" + record.getMessage()+"\n";
+        return "\n[" + d + "]"  + "[id]" + record.getMessage();
+    }
+}
+
+class ParamsLogHandler extends Formatter {
+    @Override
+    public String format(LogRecord record) {
+        return " [parameters]" + record.getMessage();
     }
 }
