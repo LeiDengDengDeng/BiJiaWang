@@ -29,9 +29,5 @@ public class BuyCommand extends Command {
         args.put("userId",userId);
         args.put("goodsId",goodsId);
     }
-    @Override
-    protected void initCommandId(){
-        this.commandId="";
-    }
 
 }

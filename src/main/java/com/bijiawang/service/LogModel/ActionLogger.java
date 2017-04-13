@@ -1,18 +1,40 @@
 package com.bijiawang.service.LogModel;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.Properties;
 import java.util.logging.*;
+
+import java.io.File;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 /**
  * Created by disinuo on 17/3/25.
  */
 public class ActionLogger {
-
     private final static String actionLogSrc="/Users/disinuo/Downloads/log.txt";
-
+    private static boolean testMode=true;
+    static {
+        try {
+            File f = new File("mode.xml");
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(f);
+            String mode= doc.getElementsByTagName("test").item(0).getFirstChild().getNodeValue();
+            testMode=mode.equals("true")?true:false;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public static void logAfter(String actionId){
+        if(!testMode) return;
         logBefore(actionId,null);
     }
     /**
@@ -21,6 +43,8 @@ public class ActionLogger {
      * @param args
      */
     public static void logBefore(String actionId, Map args){
+        if(!testMode) return;
+        System.out.print("Logging Action!");
         /**
          *
          * public FileHandler(String pattern,
