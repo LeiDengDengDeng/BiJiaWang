@@ -9,11 +9,10 @@ import java.net.InetAddress;
 public class monitor {
 
     SolveException systemException = new SystemException();
-    SolveException dataException = new DataException();
 
-    final long interval = 600000; //10min
-    final int timeOut = 10000;
-    final String ipAddress = "127.0.0.0";
+    private final long interval = 600000; //10min
+    private final int timeOut = 10000;
+    private final String ipAddress = "127.0.0.0";
 
     public void monitor(){
 
@@ -27,8 +26,6 @@ public class monitor {
                         if(!InetAddress.getByName(ipAddress).isReachable(timeOut)){
                             systemException.solve();
                         }
-
-                        dataException.solve();
 
                         try {
                             Thread.sleep(interval);
