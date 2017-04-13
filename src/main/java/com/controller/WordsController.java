@@ -27,7 +27,7 @@ public class WordsController {
     public boolean addSensitiveWords(String words){
         SensitiveEntity sensitiveEntity = new SensitiveEntity();
         sensitiveEntity.setSensitiveWord(words);
-        sensitiveEntity.setId(sensitiveWordsService.getCount()+1);
+        sensitiveEntity.setId(sensitiveWordsService.findAll().size()+1);
         sensitiveWordsService.addShieldWords(sensitiveEntity);
         return true;
 
@@ -51,7 +51,8 @@ public class WordsController {
     public boolean synonymsWords(String words){
         SynonymsEntity synonymsEntity = new SynonymsEntity();
         synonymsEntity.setSynonymsWord(words);
-        synonymsEntity.setId(synonymsService.getCount()+1);
+        synonymsEntity.setGroupid(synonymsService.getCount()+1);
+        synonymsEntity.setId(synonymsService.findAll().size()+1);
         synonymsService.addSynonyms(synonymsEntity);
         return true;
     }
