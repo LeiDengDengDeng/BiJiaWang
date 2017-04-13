@@ -1,5 +1,4 @@
 package com.service;
-
 import com.model.GoodEntity;
 import com.model.GoodshieldEntity;
 import com.repository.GoodRepository;
@@ -14,7 +13,7 @@ import java.util.List;
 /**
  * Created by liying on 2017/4/11.
  */
-@Service("shiledService")
+@Service("shieldService")
 @Transactional
 public class ShieldServiceImpl implements ShieldService {
 

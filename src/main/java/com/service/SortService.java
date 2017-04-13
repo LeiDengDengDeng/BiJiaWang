@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface SortService {
 
-     List<GoodEntity> sort(List<GoodEntity> list,SortStrategy sortStrategy);
+     List<GoodEntity> sort(List<GoodEntity> list, SortStrategy sortStrategy);
 }

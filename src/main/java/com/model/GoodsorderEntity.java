@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by luoxuechun on 2017/3/26.
+ * Created by starrylemon on 2017/4/13.
  */
 @Entity
 @Table(name = "goodsorder", schema = "biJiangWang", catalog = "")
@@ -13,11 +13,9 @@ public class GoodsorderEntity {
     private String price;
     private String amount;
     private Timestamp buytime;
-    private UserEntity userByUserId;
-    private GoodEntity goodByGoodId;
 
     @Id
-    @Column(name = "orderID")
+    @Column(name = "orderID", nullable = false)
     public int getOrderId() {
         return orderId;
     }
@@ -27,7 +25,7 @@ public class GoodsorderEntity {
     }
 
     @Basic
-    @Column(name = "price")
+    @Column(name = "price", nullable = false, length = 45)
     public String getPrice() {
         return price;
     }
@@ -37,7 +35,7 @@ public class GoodsorderEntity {
     }
 
     @Basic
-    @Column(name = "amount")
+    @Column(name = "amount", nullable = false, length = 45)
     public String getAmount() {
         return amount;
     }
@@ -47,7 +45,7 @@ public class GoodsorderEntity {
     }
 
     @Basic
-    @Column(name = "buytime")
+    @Column(name = "buytime", nullable = true)
     public Timestamp getBuytime() {
         return buytime;
     }
@@ -78,25 +76,5 @@ public class GoodsorderEntity {
         result = 31 * result + (amount != null ? amount.hashCode() : 0);
         result = 31 * result + (buytime != null ? buytime.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "userID", referencedColumnName = "userID", nullable = false)
-    public UserEntity getUserByUserId() {
-        return userByUserId;
-    }
-
-    public void setUserByUserId(UserEntity userByUserId) {
-        this.userByUserId = userByUserId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "goodID", referencedColumnName = "goodID", nullable = false)
-    public GoodEntity getGoodByGoodId() {
-        return goodByGoodId;
-    }
-
-    public void setGoodByGoodId(GoodEntity goodByGoodId) {
-        this.goodByGoodId = goodByGoodId;
     }
 }

@@ -25,8 +25,9 @@ public class monitor {
                     try {
                         if(!InetAddress.getByName(ipAddress).isReachable(timeOut)){
                             systemException.solve();
+                            System.out.println("error!!!!!!!!!");
                         }
-
+                        System.out.println("success.............");
                         try {
                             Thread.sleep(interval);
                         } catch (InterruptedException e) {

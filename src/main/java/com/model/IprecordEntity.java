@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by luoxuechun on 2017/3/26.
+ * Created by starrylemon on 2017/4/13.
  */
 @Entity
 @Table(name = "iprecord", schema = "biJiangWang", catalog = "")
@@ -15,7 +15,7 @@ public class IprecordEntity {
     private Timestamp lastvisittime;
 
     @Id
-    @Column(name = "idaddress")
+    @Column(name = "idaddress", nullable = false, length = 45)
     public String getIdaddress() {
         return idaddress;
     }
@@ -25,7 +25,7 @@ public class IprecordEntity {
     }
 
     @Basic
-    @Column(name = "times")
+    @Column(name = "times", nullable = true)
     public Integer getTimes() {
         return times;
     }
@@ -35,7 +35,7 @@ public class IprecordEntity {
     }
 
     @Basic
-    @Column(name = "totaltimes")
+    @Column(name = "totaltimes", nullable = true)
     public Integer getTotaltimes() {
         return totaltimes;
     }
@@ -45,7 +45,7 @@ public class IprecordEntity {
     }
 
     @Basic
-    @Column(name = "lastvisittime")
+    @Column(name = "lastvisittime", nullable = true)
     public Timestamp getLastvisittime() {
         return lastvisittime;
     }

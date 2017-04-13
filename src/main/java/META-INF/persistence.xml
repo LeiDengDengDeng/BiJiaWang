@@ -3,9 +3,18 @@
 
     <persistence-unit name="NewPersistenceUnit">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>com.model.CommentEntity</class>
+        <class>com.model.GoodEntity</class>
+        <class>com.model.GoodshieldEntity</class>
+        <class>com.model.GoodsorderEntity</class>
+        <class>com.model.IpblacklistEntity</class>
+        <class>com.model.IprecordEntity</class>
+        <class>com.model.SensitiveEntity</class>
+        <class>com.model.SynonymsEntity</class>
+        <class>com.model.UserEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value=""/>
-            <property name="hibernate.connection.driver_class" value=""/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.username" value=""/>
             <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.archive.autodetection" value="class"/>

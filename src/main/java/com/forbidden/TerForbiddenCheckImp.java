@@ -1,9 +1,5 @@
 package com.forbidden;
 
-import com.model.CommentEntity;
-
-import javax.smartcardio.TerminalFactory;
-
 /**
  * Created by user on 2017/4/12.
  */

@@ -2,8 +2,9 @@ package com.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+
 /**
- * Created by luoxuechun on 2017/3/26.
+ * Created by starrylemon on 2017/4/13.
  */
 @Entity
 @Table(name = "comment", schema = "biJiangWang", catalog = "")
@@ -11,11 +12,9 @@ public class CommentEntity {
     private int commentId;
     private Timestamp time;
     private String content;
-    private UserEntity userByUserId;
-    private GoodEntity goodByGoodId;
 
     @Id
-    @Column(name = "commentID")
+    @Column(name = "commentID", nullable = false)
     public int getCommentId() {
         return commentId;
     }
@@ -25,7 +24,7 @@ public class CommentEntity {
     }
 
     @Basic
-    @Column(name = "time")
+    @Column(name = "time", nullable = false)
     public Timestamp getTime() {
         return time;
     }
@@ -35,7 +34,7 @@ public class CommentEntity {
     }
 
     @Basic
-    @Column(name = "content")
+    @Column(name = "content", nullable = false, length = 255)
     public String getContent() {
         return content;
     }
@@ -64,25 +63,5 @@ public class CommentEntity {
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "userID", referencedColumnName = "userID", nullable = false)
-    public UserEntity getUserByUserId() {
-        return userByUserId;
-    }
-
-    public void setUserByUserId(UserEntity userByUserId) {
-        this.userByUserId = userByUserId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "goodID", referencedColumnName = "goodID", nullable = false)
-    public GoodEntity getGoodByGoodId() {
-        return goodByGoodId;
-    }
-
-    public void setGoodByGoodId(GoodEntity goodByGoodId) {
-        this.goodByGoodId = goodByGoodId;
     }
 }

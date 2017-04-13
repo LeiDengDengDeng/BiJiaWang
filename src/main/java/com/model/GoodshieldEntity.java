@@ -1,18 +1,20 @@
 package com.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
- * Created by luoxuechun on 2017/3/26.
+ * Created by starrylemon on 2017/4/13.
  */
 @Entity
 @Table(name = "goodshield", schema = "biJiangWang", catalog = "")
 public class GoodshieldEntity {
     private int goodId;
-    private GoodEntity goodByGoodId;
 
     @Id
-    @Column(name = "goodID")
+    @Column(name = "goodID", nullable = false)
     public int getGoodId() {
         return goodId;
     }
@@ -36,15 +38,5 @@ public class GoodshieldEntity {
     @Override
     public int hashCode() {
         return goodId;
-    }
-
-    @OneToOne
-    @JoinColumn(name = "goodID", referencedColumnName = "goodID", nullable = false)
-    public GoodEntity getGoodByGoodId() {
-        return goodByGoodId;
-    }
-
-    public void setGoodByGoodId(GoodEntity goodByGoodId) {
-        this.goodByGoodId = goodByGoodId;
     }
 }

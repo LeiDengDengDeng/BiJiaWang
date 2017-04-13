@@ -2,8 +2,6 @@ package com.service;
 
 import com.model.UserEntity;
 
-import java.util.Map;
-
 /**
  * Created by 蒋香香 on 2017/4/13.
  */

@@ -3,21 +3,34 @@ package com.service;
 /**
  * Created by caosh on 2017/4/13.
  */
+
+import com.model.SynonymsEntity;
+import com.repository.SynonymsRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service("synonymsService")
+@Transactional
 public class SynonymsServiceImpl implements SynonymsService {
 
-    @Override
-    public boolean addSynonyms() {
+    SynonymsRepository synonymsRepository;
 
-        return false;
+    @Override
+    public boolean addSynonyms(SynonymsEntity synonymsEntity) {
+        synonymsRepository.save(synonymsEntity);
+        return true;
     }
 
     @Override
-    public boolean deleteSynonyms() {
-        return false;
+    public boolean deleteSynonyms(SynonymsEntity synonymsEntity) {
+        synonymsRepository.delete(synonymsEntity.getId());
+        return true;
     }
 
     @Override
-    public boolean findAll() {
-        return false;
+    public List findAll() {
+        return synonymsRepository.findAll();
     }
 }
