@@ -72,10 +72,11 @@ $RECYCLE.BIN/
 *.iml
 /target
 
+# Xmls
 workspace.xml
 BiJiaWang.iml
 compiler.xml
 misc.xml
 vcs.xml
 modules.xml
-
+mvc-dispatcher-servlet.xml
