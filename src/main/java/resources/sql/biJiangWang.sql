@@ -11,7 +11,7 @@
  Target Server Version : 50505
  File Encoding         : utf-8
 
- Date: 03/26/2017 19:12:46 PM
+ Date: 04/13/2017 19:35:07 PM
 */
 
 SET NAMES utf8;
@@ -25,7 +25,7 @@ CREATE TABLE `comment` (
   `commentID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `time` datetime NOT NULL,
-  `content` varchar(255) NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `goodID` int(11) NOT NULL,
   PRIMARY KEY (`commentID`),
   KEY `goodID` (`goodID`),
@@ -34,15 +34,12 @@ CREATE TABLE `comment` (
   CONSTRAINT `FKc8rw5dl8r0b65whr1uaextqok` FOREIGN KEY (`goodID`) REFERENCES `good` (`goodID`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`),
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`goodID`) REFERENCES `good` (`goodID`)
-) ENGINE=InnoDB DEFAULT  CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 --  Table structure for `good`
 -- ----------------------------
-
 DROP TABLE IF EXISTS `good`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `good` (
   `goodID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -72,8 +69,8 @@ CREATE TABLE `goodshield` (
 DROP TABLE IF EXISTS `goodsorder`;
 CREATE TABLE `goodsorder` (
   `orderID` int(11) NOT NULL,
-  `price` varchar(45) NOT NULL,
-  `amount` varchar(45) NOT NULL,
+  `price` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `amount` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `userID` int(11) NOT NULL,
   `goodID` int(11) NOT NULL,
   `buytime` datetime DEFAULT NULL,
@@ -91,7 +88,7 @@ CREATE TABLE `goodsorder` (
 -- ----------------------------
 DROP TABLE IF EXISTS `ipblacklist`;
 CREATE TABLE `ipblacklist` (
-  `ipaddress` varchar(45) NOT NULL,
+  `ipaddress` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ipaddress`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -100,7 +97,7 @@ CREATE TABLE `ipblacklist` (
 -- ----------------------------
 DROP TABLE IF EXISTS `iprecord`;
 CREATE TABLE `iprecord` (
-  `idaddress` varchar(45) NOT NULL,
+  `idaddress` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `times` int(11) DEFAULT '0',
   `totaltimes` int(11) DEFAULT '0',
   `lastvisittime` datetime DEFAULT NULL,
@@ -108,18 +105,52 @@ CREATE TABLE `iprecord` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
+--  Table structure for `sensitive`
+-- ----------------------------
+DROP TABLE IF EXISTS `sensitive`;
+CREATE TABLE `sensitive` (
+  `sensitiveWord` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `sensitive`
+-- ----------------------------
+BEGIN;
+INSERT INTO `sensitive` VALUES ('去你妈', '1'), ('共产党', '2');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `synonyms`
+-- ----------------------------
+DROP TABLE IF EXISTS `synonyms`;
+CREATE TABLE `synonyms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `synonymsWord` varchar(255) NOT NULL,
+  `word` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `synonyms`
+-- ----------------------------
+BEGIN;
+INSERT INTO `synonyms` VALUES ('1', 'iphone', 'iphone7');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `userID` int(11) NOT NULL,
-  `userName` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` varchar(50) NOT NULL,
+  `userName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`userID`),
   KEY `userID` (`userID`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 
 SET FOREIGN_KEY_CHECKS = 1;

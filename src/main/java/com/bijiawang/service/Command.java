@@ -20,11 +20,6 @@ public class Command {
         logAfterCommand();
         return msg;
     }
-    /**
-     * 子类要重写！
-     *子类要初始化自己的commandId！就是对应的service方法的全名
-     */
-    protected void initCommandId(){}
 
     /**
      * 子类要重写！
@@ -34,6 +29,7 @@ public class Command {
 
         return null;
     }
+    protected void initCommandId(){}
 
 
     private void logBeforeCommand(){
@@ -41,7 +37,7 @@ public class Command {
     }
 
     private void logAfterCommand(){
-        ActionLogger.logAfter(commandId);
+        ActionLogger.logAfter(this.commandId);
 
     }
 }
