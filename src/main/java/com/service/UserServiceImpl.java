@@ -21,28 +21,24 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public boolean login(String username, String password) {
-        Map<String, Object> map = new HashMap<>();
-        boolean isLogin=false;
+    public String login(String username, String password) {
         username = username.trim();
         password = password.trim();
         if (username.length() == 0 || password.length() == 0) {
-            map.put("success", false);
-            map.put("error", "请把信息填写完整！");
+
+           return "error , 请把信息填写完整！";
         } else  {
             String pass= userRepository.getPassWord(username);
 
                 if (!password.equals(pass)) {
-                    map.put("success", false);
-                    map.put("error", "用户名或密码错误！");
+                  return  "error, 用户名或密码错误！";
                 } else {
-                    map.put("success", true);
-                    map.put("user_name", username);
-                    isLogin=true;
+
+                 return username;
                 }
             }
 
-        return isLogin;
+
     }
 
 }
