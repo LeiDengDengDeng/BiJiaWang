@@ -1,11 +1,9 @@
 package com.bijiawang.service.LogModel;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.Properties;
 import java.util.logging.*;
 
 import java.io.File;
@@ -19,7 +17,10 @@ import org.w3c.dom.NodeList;
  * Created by disinuo on 17/3/25.
  */
 public class ActionLogger {
-    private final static String actionLogSrc="/Users/disinuo/Downloads/log.txt";
+    public static void main(String[] args){
+        ActionLogger.logAfter("try~~~");
+    }
+    private final static String actionLogSrc="actionLog.txt";
     private static boolean testMode=true;
     static {
         try {

@@ -7,7 +7,7 @@ import java.util.logging.*;
  * Created by disinuo on 17/3/26.
  */
 public class ErrorLogger {
-    private final static String actionLogSrc="/Users/disinuo/Downloads/errorLog.txt";
+    private final static String actionLogSrc="errorLog.txt";
 
     public static void log(String actionId,Exception exception){
         Logger log = Logger.getLogger("lavasoft");
