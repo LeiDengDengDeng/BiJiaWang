@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -24,11 +25,12 @@ public class WordsController {
     private SynonymsService synonymsService;
 
     @RequestMapping("/addSensitiveWords")
-    public boolean addSensitiveWords(String words){
+    public boolean addSensitiveWords(HttpServletRequest request){
+        String words = (String) request.getAttribute("sensitiveWord");
         SensitiveEntity sensitiveEntity = new SensitiveEntity();
         sensitiveEntity.setSensitiveWord(words);
         sensitiveEntity.setId(sensitiveWordsService.findAll().size()+1);
-        sensitiveWordsService.addShieldWords(sensitiveEntity);
+        sensitiveWordsService.addSensitiveWords(sensitiveEntity);
         return true;
 
     }
@@ -39,16 +41,17 @@ public class WordsController {
     }
 
     @RequestMapping("/deleteSensitiveWords")
-    public boolean deleteSensitiveWords(String words,int id){
-        SensitiveEntity sensitiveEntity = new SensitiveEntity();
-        sensitiveEntity.setId(id);
-        sensitiveEntity.setSensitiveWord(words);
+    public boolean deleteSensitiveWords(HttpServletRequest request){
+        int id = (int) request.getAttribute("sensitiveId");
+        SensitiveEntity sensitiveEntity = sensitiveWordsService.getOne(id);
+        sensitiveWordsService.deleteSensitiveWords(sensitiveEntity);
         return true;
     }
 
 
     @RequestMapping("/addSynonymsWords")
-    public boolean synonymsWords(String words){
+    public boolean synonymsWords(HttpServletRequest request){
+        String words = (String) request.getAttribute("synonymsWord");
         SynonymsEntity synonymsEntity = new SynonymsEntity();
         synonymsEntity.setSynonymsWord(words);
         synonymsEntity.setGroupid(synonymsService.getCount()+1);
@@ -63,10 +66,9 @@ public class WordsController {
     }
 
     @RequestMapping("/deleteSynonymsWords")
-    public boolean deleteSynonymsWords(String words,int id){
-        SynonymsEntity synonymsEntity = new SynonymsEntity();
-        synonymsEntity.setId(id);
-        synonymsEntity.setSynonymsWord(words);
+    public boolean deleteSynonymsWords(HttpServletRequest request){
+        int id = (int) request.getAttribute("synonymsId");
+        SynonymsEntity synonymsEntity = synonymsService.getOne(id);
         synonymsService.deleteSynonyms(synonymsEntity);
         return true;
     }

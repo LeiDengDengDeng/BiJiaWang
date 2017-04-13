@@ -63,4 +63,9 @@ public class SynonymsServiceImpl implements SynonymsService {
     public int getCount() {
         return (int) synonymsRepository.count();
     }
+
+    @Override
+    public SynonymsEntity getOne(int id) {
+        return synonymsRepository.findOne(id);
+    }
 }

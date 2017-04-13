@@ -9,11 +9,13 @@ import java.util.List;
  */
 public interface SensitiveWordsService {
 
-    public boolean addShieldWords(SensitiveEntity sensitiveEntity);
+    public boolean addSensitiveWords(SensitiveEntity sensitiveEntity);
 
-    public boolean deleteShieldWords(SensitiveEntity sensitiveEntity);
+    public boolean deleteSensitiveWords(SensitiveEntity sensitiveEntity);
 
     public List findAll();
 
     public int getCount();
+
+    public SensitiveEntity getOne(int id);
 }
