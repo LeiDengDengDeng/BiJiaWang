@@ -30,15 +30,14 @@
             </div>
             <div class="login-right">
                 <img class="login-logo" src="images/logo_green.png">
-                <input type="text" placeholder="用户名">
-                <input type="text" placeholder="密码">
+                <input type="text" placeholder="用户名" id="userName">
+                <input type="password" placeholder="密码" id="password">
                 <div class="login-under-input">
                     <input type="checkbox">
                 </div>
-                <button>登录</button>
+                <button onclick="login()">登录</button>
             </div>
         </div>
-
 
         <div class="footer">
             <div class="decoration-center"></div>
@@ -47,7 +46,26 @@
             </h1>
         </div>
     </div>
+<script>
+    function login() {
+        var userName = document.getElementById("userName");
+        var password = document.getElementById("password");
+        $.ajax({
+            url: "/userLogin",
+            type: "POST",
+            data: {
+                userName: userName.value,
+                userPassword: password.value,
+            },
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                alert(data);
+            }
+        });
 
+    }
+</script>
 </body>
 
 </html>
