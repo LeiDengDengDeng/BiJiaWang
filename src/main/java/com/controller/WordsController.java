@@ -26,12 +26,12 @@ public class WordsController {
     SynonymsService synonymsService = new SynonymsServiceImpl();
 
     @RequestMapping("/addSensitiveWords")
-    public String addSensitiveWords(String words,int id){
+    public boolean addSensitiveWords(String words,int id){
         SensitiveEntity sensitiveEntity = new SensitiveEntity();
         sensitiveEntity.setSensitiveWord(words);
         sensitiveEntity.setId(id);
         sensitiveWordsService.addShieldWords(sensitiveEntity);
-        return "addSensitiveWords";
+        return true;
 
     }
 
@@ -41,21 +41,21 @@ public class WordsController {
     }
 
     @RequestMapping("/deleteSensitiveWords")
-    public String deleteSensitiveWords(String words,int id){
+    public boolean deleteSensitiveWords(String words,int id){
         SensitiveEntity sensitiveEntity = new SensitiveEntity();
         sensitiveEntity.setId(id);
         sensitiveEntity.setSensitiveWord(words);
-        return "deleteSensitiveWords";
+        return true;
     }
 
 
     @RequestMapping("/addSynonymsWords")
-    public String synonymsWords(String words,int id){
+    public boolean synonymsWords(String words,int id){
         SynonymsEntity synonymsEntity = new SynonymsEntity();
         synonymsEntity.setSynonymsWord(words);
         synonymsEntity.setId(id);
         synonymsService.addSynonyms(synonymsEntity);
-        return "addSynonymsWords";
+        return true;
     }
 
     @RequestMapping("/getSynonymsWords")
@@ -64,12 +64,12 @@ public class WordsController {
     }
 
     @RequestMapping("/deleteSynonymsWords")
-    public String deleteSynonymsWords(String words,int id){
+    public boolean deleteSynonymsWords(String words,int id){
         SynonymsEntity synonymsEntity = new SynonymsEntity();
         synonymsEntity.setId(id);
         synonymsEntity.setSynonymsWord(words);
         synonymsService.deleteSynonyms(synonymsEntity);
-        return "deleteSynonymsWords";
+        return true;
     }
 
 }

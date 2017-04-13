@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -21,6 +20,7 @@ import java.util.List;
 @RequestMapping
 public class CommentController{
     private CommentService commentService;
+    private RascalCheckServ ras;
     //添加评论
     @RequestMapping("/addComment")
     public boolean addComment(int commentID, String content, Timestamp time, UserEntity userByUserId, GoodEntity goodByGoodId) {
@@ -28,17 +28,19 @@ public class CommentController{
         if (commentService==null ){
             System.out.println("comment service null");
         }
-        comment.setCommentId(commentID);
-        comment.setGoodByGoodId(goodByGoodId);
-        comment.setUserByUserId(userByUserId);
-        comment.setContent(content);
+//        comment.setCommentId(commentID);
+//        comment.setGoodByGoodId(goodByGoodId);
+//        comment.setUserByUserId(userByUserId);
+//        comment.setContent(content);
         comment.setTime(new Timestamp(System.currentTimeMillis()));
 
-//        if(isRascal(userByUserId,goodByGoodId,comment)){
-//            //通知管理员
-//            commentService=null;
-// }
-        RascalCheckServ ras=new RascalCheckServ;
+        List<CommentEntity> commentList=null;
+
+        if(ras.isRascal(userByUserId,comment,commentList)){
+            //通知管理员
+            commentService=null;
+ }
+
 //        ras.isRascal( );
 
         return commentService.saveComment(comment);

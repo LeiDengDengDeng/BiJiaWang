@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
  * Created by luoxuechun on 2017/4/13.
  */
 @Repository
-public interface GoodsheildRepository extends JpaRepository<GoodshieldEntity,Integer> {
+public interface GoodsheildRepository extends JpaRepository<GoodshieldEntity,Integer>{
+    
 }

@@ -5,7 +5,6 @@ import com.bijiawang.service.commands.util.ResultMessage;
 import com.model.GoodEntity;
 import com.service.SearchService;
 import com.service.ShieldService;
-import com.service.SortService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

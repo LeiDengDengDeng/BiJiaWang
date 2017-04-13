@@ -1,4 +1,5 @@
 package com.service;
+
 import com.model.CommentEntity;
 
 import java.util.List;
@@ -13,4 +14,10 @@ public interface CommentService {
     CommentEntity getCommentById(int id);
     //保存发表的评论
     boolean saveComment(CommentEntity comment);
+
+    //查看某一用户所有评论
+    List<CommentEntity> getAllCommentsByUser(int userid);
+
+    //查看某一用户对当前产品的评论
+    CommentEntity getComment(int userid,int goodid);
 }

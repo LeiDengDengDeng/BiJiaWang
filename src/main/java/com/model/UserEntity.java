@@ -1,10 +1,9 @@
 package com.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
- * Created by luoxuechun on 2017/3/26.
+ * Created by starrylemon on 2017/4/13.
  */
 @Entity
 @Table(name = "user", schema = "biJiangWang", catalog = "")
@@ -14,11 +13,9 @@ public class UserEntity {
     private String password;
     private String email;
     private String phone;
-    private Collection<CommentEntity> commentsByUserId;
-    private Collection<GoodsorderEntity> goodsordersByUserId;
 
     @Id
-    @Column(name = "userID")
+    @Column(name = "userID", nullable = false)
     public int getUserId() {
         return userId;
     }
@@ -28,7 +25,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "userName")
+    @Column(name = "userName", nullable = false, length = 50)
     public String getUserName() {
         return userName;
     }
@@ -38,7 +35,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "password")
+    @Column(name = "password", nullable = false, length = 50)
     public String getPassword() {
         return password;
     }
@@ -48,7 +45,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, length = 50)
     public String getEmail() {
         return email;
     }
@@ -58,7 +55,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false, length = 50)
     public String getPhone() {
         return phone;
     }
@@ -91,23 +88,5 @@ public class UserEntity {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "userByUserId")
-    public Collection<CommentEntity> getCommentsByUserId() {
-        return commentsByUserId;
-    }
-
-    public void setCommentsByUserId(Collection<CommentEntity> commentsByUserId) {
-        this.commentsByUserId = commentsByUserId;
-    }
-
-    @OneToMany(mappedBy = "userByUserId")
-    public Collection<GoodsorderEntity> getGoodsordersByUserId() {
-        return goodsordersByUserId;
-    }
-
-    public void setGoodsordersByUserId(Collection<GoodsorderEntity> goodsordersByUserId) {
-        this.goodsordersByUserId = goodsordersByUserId;
     }
 }

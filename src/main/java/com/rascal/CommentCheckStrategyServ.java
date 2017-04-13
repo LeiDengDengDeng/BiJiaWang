@@ -1,7 +1,6 @@
 package com.rascal;
 
 import com.model.CommentEntity;
-import com.model.GoodEntity;
 
 import java.util.Collection;
 

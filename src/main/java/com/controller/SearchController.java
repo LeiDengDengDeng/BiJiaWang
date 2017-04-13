@@ -8,8 +8,9 @@ import com.service.SortService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -28,7 +29,8 @@ public class SearchController {
     @Autowired
     private ShieldService shieldService;
 
-    @RequestMapping("/search")
+    @ResponseBody
+    @RequestMapping(value="/search",method = RequestMethod.POST)
     public List<GoodEntity> searchGoods(String keyword){
         //todo 从同义词列表获取同义词
         String[] keywords=null;
@@ -42,8 +44,8 @@ public class SearchController {
         return goodEntities;
 
     }
-
-    @RequestMapping("/sort")
+    @ResponseBody
+    @RequestMapping(value="/sort",method = RequestMethod.POST)
     public List<GoodEntity> sortGoods(List<GoodEntity> goodEntities,SortStrategy sortStrategy) {
         //将搜索获得的商品进行排序
         goodEntities = sortService.sort(goodEntities, sortStrategy);

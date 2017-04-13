@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Created by luoxuechun on 2017/3/26.
+ * Created by starrylemon on 2017/4/13.
  */
 @Entity
 @Table(name = "ipblacklist", schema = "biJiangWang", catalog = "")
@@ -14,7 +14,7 @@ public class IpblacklistEntity {
     private String ipaddress;
 
     @Id
-    @Column(name = "ipaddress")
+    @Column(name = "ipaddress", nullable = false, length = 45)
     public String getIpaddress() {
         return ipaddress;
     }
