@@ -28,22 +28,15 @@ public class CommentController{
         if (commentService==null ){
             System.out.println("comment service null");
         }
-//        comment.setCommentId(commentID);
-//        comment.setGoodByGoodId(goodByGoodId);
-//        comment.setUserByUserId(userByUserId);
-//        comment.setContent(content);
         comment.setTime(new Timestamp(System.currentTimeMillis()));
 
         List<CommentEntity> commentList=commentService.getAllComments(userByUserId.getUserId());
         comment=commentService.getComment(userByUserId.getUserId(),goodByGoodId.getGoodId());
         if(ras.isRascal(userByUserId,comment,commentList)){
             //通知管理员
-            
+
             commentService=null;
- }
-
-//        ras.isRascal( );
-
+        }
         return commentService.saveComment(comment);
     }
 
@@ -63,6 +56,5 @@ public class CommentController{
         int id=comment.getCommentId();
         return commentService.getAllComments(id);
     }
-
 
 }
