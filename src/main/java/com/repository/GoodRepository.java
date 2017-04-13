@@ -14,4 +14,7 @@ public interface GoodRepository extends JpaRepository<GoodEntity,Integer> {
     @Query("select good from GoodEntity good where good.name=?1")
     GoodEntity searchGood(String goodName);
 
+    @Query("select good from GoodEntity good where good.detail=?1")
+    GoodEntity searchGoodByDetail(String goodDetail);
+
 }
