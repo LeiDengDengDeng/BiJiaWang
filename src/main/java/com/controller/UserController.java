@@ -22,9 +22,9 @@ public class UserController {
     @RequestMapping("/userLogin")
     public Map<String, Object> userLogin(String userName, String userPassword){
 //        if(userName=="commonUser1"){
-//// TODO: 2017/4/12
+
 //        }else if(userName=="admin1"){
-//// TODO: 2017/4/12
+
 //        }
         return userService.login(userName,userPassword);
     }
