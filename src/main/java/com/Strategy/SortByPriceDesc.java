@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * Created by liying on 2017/4/11.
  */
-public class SortByPriceDesc<Goods> implements SortStrategy<Goods> {
+public class SortByPriceDesc<GoodEntity> implements SortStrategy<GoodEntity> {
 
     @Override
-    public List<Goods> sort(List<Goods> list) {
+    public List<GoodEntity> sort(List<GoodEntity> list) {
         list.sort(new PriceComparator());
         Collections.reverse(list);
         return list;
