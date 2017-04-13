@@ -4,8 +4,10 @@ package com.service;
  * Created by caosh on 2017/4/13.
  */
 public class SynonymsServiceImpl implements SynonymsService {
+
     @Override
     public boolean addSynonyms() {
+
         return false;
     }
 
