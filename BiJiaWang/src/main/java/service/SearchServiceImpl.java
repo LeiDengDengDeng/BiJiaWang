@@ -21,7 +21,7 @@ public class SearchServiceImpl implements SearchService{
 
 
     @Override
-    public List<GoodEntity> analyse(String[] keywords) {
+    public List<GoodEntity> analyse(List<String> keywords) {
 
         List<GoodEntity> goodEntities = new ArrayList<>();
         //匹配关键词

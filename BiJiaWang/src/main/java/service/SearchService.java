@@ -2,6 +2,7 @@ package service;
 
 import model.GoodEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface SearchService {
 
-     List<GoodEntity> analyse(String[] keywords);
+     List<GoodEntity> analyse(List<String> keywords);
 }

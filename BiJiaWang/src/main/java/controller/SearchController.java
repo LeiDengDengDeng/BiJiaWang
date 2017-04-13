@@ -1,5 +1,6 @@
 package controller;
 
+import service.SynonymsService;
 import strategy.SortStrategy;
 import model.GoodEntity;
 import service.SearchService;
@@ -29,11 +30,14 @@ public class SearchController {
     @Autowired
     private ShieldService shieldService;
 
+    @Autowired
+    private SynonymsService synonymsService;
+
     @ResponseBody
-    @RequestMapping(value="/search",method = RequestMethod.POST)
-    public List<GoodEntity> searchGoods(String keyword){
+    @RequestMapping(value="/search")
+    public List<GoodEntity> searchGoods(String keyword,SortStrategy sortStrategy){
         //todo 从同义词列表获取同义词
-        String[] keywords=null;
+        List<String> keywords=null;
 
         //将列表中的所有词交给analyse分析
         List<GoodEntity> goodEntities= searchService.analyse(keywords);
@@ -41,13 +45,11 @@ public class SearchController {
         //删除列表中的负面商品
         goodEntities=shieldService.shield(goodEntities);
 
-        return goodEntities;
 
-    }
-    @ResponseBody
-    @RequestMapping(value="/sort",method = RequestMethod.POST)
-    public List<GoodEntity> sortGoods(List<GoodEntity> goodEntities,SortStrategy sortStrategy) {
-        //将搜索获得的商品进行排序
+        if(sortStrategy==null){
+            return goodEntities;
+        }
+        // 对搜索结果进行排序
         goodEntities = sortService.sort(goodEntities, sortStrategy);
 
         return goodEntities;
