@@ -11,7 +11,7 @@ public interface GoodRepository extends JpaRepository<GoodEntity,Integer> {
 
 
     @Transactional
-    @Query("select good from GoodEntity good where good.name=?1")
+    @Query("select good from GoodEntity good where good.name like %?1%")
     GoodEntity searchGood(String goodName);
 
     @Query("select good from GoodEntity good where good.detail=?1")
