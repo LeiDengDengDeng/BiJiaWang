@@ -67,6 +67,18 @@ a{
     clear: both;
 }
 
+.login-logo {
+    position: relative;
+    float: left;
+    top: 24%;
+    left: 18%;
+    width: 60%;
+}
+
+.login-main-logo {
+    left: 34%;
+}
+
 /*.main-logo{*/
     /*background-image: url(../images/isports-white.png);*/
     /*background-size: 90%;*/
@@ -199,6 +211,81 @@ activities
 }
 
 .per-input input:focus{
+    box-shadow: 0 0 7px #79BD9A;
+    -webkit-box-shadow: 0 0 7px #79BD9A;
+    -moz-box-shadow: 0 0 7px #79BD9A;
+}
+
+.full-btn{
+    position: relative;
+    float: right;
+    right: 5%;
+    width: 63%;
+    height: 100%;
+    background-color: #eeeeee;
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+}
+
+.full-btn h1{
+    width: 100%;
+    text-align: center;
+    /*background-color: green;*/
+    color: #616161;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 110px;
+}
+
+.full-btn:hover{
+    cursor: pointer;
+    background-color: #d9d9d9;
+}
+
+.per-textarea{
+    position: relative;
+    float: left;
+    top:5%;
+    width: 44%;
+    margin-left: 4%;
+    margin-bottom: 5%;
+    height: 120px;
+    /*border:  solid #eeeeee 1px;*/
+    /*background-color: greenyellow;*/
+}
+
+.per-textarea p{
+    position: relative;
+    float: left;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.per-textarea textarea {
+    position: relative;
+    float: right;
+    /*top:40%;*/
+    margin-top: 0;
+    right: 5%;
+    width: 60%;
+    height: 100%;
+    /*margin-top: 25px;*/
+    border:  solid #ebebeb 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 300;
+
+    transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    border-radius: 2px;
+    outline: none;
+}
+
+.per-textarea textarea:focus{
     box-shadow: 0 0 7px #79BD9A;
     -webkit-box-shadow: 0 0 7px #79BD9A;
     -moz-box-shadow: 0 0 7px #79BD9A;
@@ -799,23 +886,27 @@ activities
 .login-holder{
     position: relative;
     float: left;
-    top:6%;
+    top: 10%;
     left: 15%;
     width: 70%;
     /*padding: 30px 2% 30px 2%;*/
-    height: 80%;
+    height: 68%;
+    margin-bottom: 5%;
     margin-left: 0;
-    border:  solid #eeeeee 1px;
+    border: solid #eeeeee 1px;
     background-color: white;
 }
 
 .login-left{
-     position: relative;
-     float: left;
-     left: 0;
-     width: 61.8%;
-     height: 100%;
-     border-right: inset #eeeeee 1px;
+    position: relative;
+    float: left;
+    left: 0;
+    width: 61.8%;
+    height: 100%;
+    border-right: inset #eeeeee 1px;
+    background: url("../images/mainPoster.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
      /*background-color: green;*/
  }
 
@@ -904,12 +995,19 @@ activities
 }
 
 .thin-forty{
-
     top:15%;
     padding-top: 3%;
     left: 30%;
     width: 40%;
     margin-bottom: 16%;
+}
+
+.thin-fifty{
+    top:15%;
+    padding-top: 3%;
+    left: 25%;
+    width: 50%;
+    margin-bottom: 8%;
 }
 
 .width-ninety{
@@ -935,7 +1033,17 @@ activities
     text-align: center;
 }
 
-.source-head{
+.source-head-half{
+    position: relative;
+    float: left;
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 6px;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.source-head-quater{
     position: relative;
     float: left;
     width: 25%;
@@ -970,14 +1078,20 @@ activities
 .goods-price{
     position: relative;
     float: left;
-    width: 25%;
+    width: 50%;
     font-size: 15px;
     font-weight: 400;
     color:#DE7E73;
-    font-weight: 500;
     padding-bottom: 6px;
     padding-top: 5px;
     border-bottom: solid 1px #eeeeee;
+}
+
+.goods-price input{
+    position: relative;
+    float: left;
+    left: 25%;
+    width: 50%;
 }
 
 .go-shopping{
@@ -992,8 +1106,25 @@ activities
     border-bottom: solid 1px #eeeeee;
 }
 
-.go-shopping a {
-    color:#1e8248;
+.go-shopping p{
+    position: relative;
+    float: left;
+    left:30%;
+    width: 40%;
+}
+
+.go-shopping:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #1e8248;
+}
+
+/*.go-shopping a {*/
+    /*color:#1e8248;*/
+/*}*/
+
+.go-shopping a:hover{
+    color:white;
 }
 
 .per-comment{

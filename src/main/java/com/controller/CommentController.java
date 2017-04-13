@@ -3,6 +3,7 @@ package com.controller;
 import com.model.CommentEntity;
 import com.model.GoodEntity;
 import com.model.UserEntity;
+import com.rascal.RascalCheckServ;
 import com.service.CommentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,8 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by 蒋香香 on 2017/4/13.
@@ -22,7 +23,7 @@ public class CommentController{
     private CommentService commentService;
     //添加评论
     @RequestMapping("/addComment")
-    public CommentEntity addComment(int commentID, String content, Timestamp time, UserEntity userByUserId, GoodEntity goodByGoodId) {
+    public boolean addComment(int commentID, String content, Timestamp time, UserEntity userByUserId, GoodEntity goodByGoodId) {
         CommentEntity comment= new CommentEntity();
         if (commentService==null ){
             System.out.println("comment service null");
@@ -32,13 +33,14 @@ public class CommentController{
         comment.setUserByUserId(userByUserId);
         comment.setContent(content);
         comment.setTime(new Timestamp(System.currentTimeMillis()));
-//        if(sensitiveWords(content)){
+
+//        if(isRascal(userByUserId,goodByGoodId,comment)){
 //            //通知管理员
 //            commentService=null;
-//        }else if(isRasacal(userByUserId,goodByGoodId,comment)){
-//            //通知管理员
-//            commentService=null;
-//        }
+// }
+        RascalCheckServ ras=new RascalCheckServ;
+//        ras.isRascal( );
+
         return commentService.saveComment(comment);
     }
 
@@ -53,21 +55,11 @@ public class CommentController{
 
     //查看某个商品的所有评论
     @RequestMapping("/getCommentList")
-    public List<CommentEntity> getCommonList(GoodEntity goodByGoodId, int commentID){
+    public List<CommentEntity> getCommonList(int commentID){
         CommentEntity comment= commentService.getCommentById(commentID);
-        return commentService.getAllComments(goodByGoodId);
+        int id=comment.getCommentId();
+        return commentService.getAllComments(id);
     }
-
-
-//    public boolean sensitiveWords(String str){
-//        return false;
-//        //// TODO: 2017/4/12
-//    }
-//
-//    public boolean isRasacal(UserEntity userEntity, GoodEntity goodByGoodId, CommentEntity comment){
-//        return false;
-//        //// TODO: 2017/4/12
-//    }
 
 
 }

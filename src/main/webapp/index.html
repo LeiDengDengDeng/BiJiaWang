@@ -19,43 +19,9 @@
 <body>
     <div class="container" id="navigationBar" role="navigation">
     <ul class="menu">
-        <img src="images/logo.png">
-        <li ><a href="index.html" >首页</a></li>
-        <li class="active"><a href="goods.html">活动</a>
-            <ul class="submenu">
-                <li><a href="goods.html">所有活动</a></li>
-                <li><a href="#">发布活动</a></li>
-                <li><a href="#">我的活动</a></li>
-            </ul>
-        </li>
-        <li><a href="#">数据</a>
-            <ul class="submenu">
-                <li><a href="#">我的数据</a></li>
-                <li><a href="#">好友PK</a></li>
-                <li><a href="#">历史数据</a></li>
-            </ul>
-        </li>
-        <li><a href="#">好友</a>
-            <ul class="submenu">
-                <li><a href="#">我的好友</a></li>
-                <li><a href="#">寻找朋友</a></li>
-            </ul>
-        </li>
-        <li><a href="#">我的</a>
-            <ul class="submenu">
-                <li><a href="#">我的信息</a></li>
-                <li><a href="#">个人设置</a></li>
-            </ul>
-        </li>
-                <span class="big-icon navigation-right-icon">
-                    <i class="material-icons">exit_to_app</i>
-                    <i class="fa-middle fa-bell"></i>
-                </span>
+        <img src="images/logo.png" class="login-main-logo">
     </ul>
 </div>
-    <!--小三角，勿删-->
-    <div class="menu-triangle menu-triangle-one triangle"></div>
-    <!--小三角结束，正文开始-->
 
     <div class="all-elements">
 
@@ -63,15 +29,15 @@
             <div class="login-left">
             </div>
             <div class="login-right">
-                <input type="text" placeholder="用户名">
-                <input type="text" placeholder="密码">
+                <img class="login-logo" src="images/logo_green.png">
+                <input type="text" placeholder="用户名" id="userName">
+                <input type="password" placeholder="密码" id="password">
                 <div class="login-under-input">
                     <input type="checkbox">
                 </div>
-                <button>登录</button>
+                <button onclick="login()">登录</button>
             </div>
         </div>
-
 
         <div class="footer">
             <div class="decoration-center"></div>
@@ -80,7 +46,26 @@
             </h1>
         </div>
     </div>
+<script>
+    function login() {
+        var userName = document.getElementById("userName");
+        var password = document.getElementById("password");
+        $.ajax({
+            url: "/userLogin",
+            type: "POST",
+            data: {
+                userName: userName.value,
+                userPassword: password.value,
+            },
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                alert(data);
+            }
+        });
 
+    }
+</script>
 </body>
 
 </html>
