@@ -34,10 +34,11 @@ public class CommentController{
 //        comment.setContent(content);
         comment.setTime(new Timestamp(System.currentTimeMillis()));
 
-        List<CommentEntity> commentList=null;
-
+        List<CommentEntity> commentList=commentService.getAllComments(userByUserId.getUserId());
+        comment=commentService.getComment(userByUserId.getUserId(),goodByGoodId.getGoodId());
         if(ras.isRascal(userByUserId,comment,commentList)){
             //通知管理员
+            
             commentService=null;
  }
 
