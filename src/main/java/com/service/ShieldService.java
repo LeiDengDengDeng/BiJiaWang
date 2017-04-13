@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface ShieldService {
 
-     List<GoodEntity> shield (List<GoodEntity> GoodsEntity);
+     List<GoodEntity> shield (List<GoodEntity> goodsEntity);
 }

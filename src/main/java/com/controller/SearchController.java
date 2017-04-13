@@ -39,7 +39,6 @@ public class SearchController {
         //删除列表中的负面商品
         goodEntities=shieldService.shield(goodEntities);
 
-
         return goodEntities;
 
     }
@@ -48,8 +47,6 @@ public class SearchController {
     public List<GoodEntity> sortGoods(List<GoodEntity> goodEntities,SortStrategy sortStrategy) {
         //将搜索获得的商品进行排序
         goodEntities = sortService.sort(goodEntities, sortStrategy);
-
-
 
         return goodEntities;
 
