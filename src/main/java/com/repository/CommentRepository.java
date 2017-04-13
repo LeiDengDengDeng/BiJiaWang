@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 /**
  * Created by luoxuechun on 2017/4/13.
  */
-public interface CommentRepository extends JpaRepository<CommentRepository,Integer> {
+public interface CommentRepository extends JpaRepository<CommentEntity,Integer> {
 
   @Query("select c.content from CommentEntity c where c.goodByGoodId.goodId=?1")
     CommentEntity getComment(int gooid);
