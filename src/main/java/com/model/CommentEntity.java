@@ -10,8 +10,10 @@ import java.sql.Timestamp;
 @Table(name = "comment", schema = "biJiangWang", catalog = "")
 public class CommentEntity {
     private int commentId;
+    private int userId;
     private Timestamp time;
     private String content;
+    private int goodId;
 
     @Id
     @Column(name = "commentID", nullable = false)
@@ -21,6 +23,16 @@ public class CommentEntity {
 
     public void setCommentId(int commentId) {
         this.commentId = commentId;
+    }
+
+    @Basic
+    @Column(name = "userID", nullable = false)
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     @Basic
@@ -43,6 +55,16 @@ public class CommentEntity {
         this.content = content;
     }
 
+    @Basic
+    @Column(name = "goodID", nullable = false)
+    public int getGoodId() {
+        return goodId;
+    }
+
+    public void setGoodId(int goodId) {
+        this.goodId = goodId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,6 +73,8 @@ public class CommentEntity {
         CommentEntity that = (CommentEntity) o;
 
         if (commentId != that.commentId) return false;
+        if (userId != that.userId) return false;
+        if (goodId != that.goodId) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
 
@@ -60,8 +84,10 @@ public class CommentEntity {
     @Override
     public int hashCode() {
         int result = commentId;
+        result = 31 * result + userId;
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + goodId;
         return result;
     }
 }

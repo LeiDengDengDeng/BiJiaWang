@@ -13,11 +13,12 @@ import java.util.List;
 @Repository
 public interface CommentRepository extends JpaRepository<CommentEntity,Integer> {
 
-  @Query("select c.content from CommentEntity c where c.goodByGoodId.goodId=?1 and c.userByUserId.userId=?2")
-  CommentEntity getComment(int gooid);
+  @Query("select c.content from CommentEntity c where c.goodId=?1 and c.userId=?2")
+  CommentEntity getCommentByUser(int gooid,int userid);
 
-  @Query("select c.content from CommentEntity c where c.userByUserId.userId=?1")
+  @Query("select c.content from CommentEntity c where c.userId=?1")
   List<CommentEntity> getCommentList(int gooid);
+
 
 
 }

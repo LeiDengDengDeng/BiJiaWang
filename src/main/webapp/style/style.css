@@ -464,6 +464,29 @@ activities
     /*margin-right: 3%;*/
 }
 
+
+.top-small-btn{
+    position: relative;
+    top: 20%;
+    height: 60%;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    background-color: white;
+    /*background-color: green;*/
+}
+
+.activity-btn:hover{
+    font-weight: 700;
+}
+
+.activity-btn:active{
+    outline: none;
+    color: white;
+    background-color: #DE7E73;
+}
+
 .activity-btn{
     position: relative;
     top: 20%;
@@ -678,6 +701,17 @@ activities
     /*background-color: green;*/
 }
 
+.full-photo-holder{
+    position: relative;
+    float: left;
+    top:5%;
+    left: 5%;
+    width: 100%;
+    margin-top: 10px;
+    height: 50%;
+    /*background-color: green;*/
+}
+
 .photo-item{
     position: relative;
     float: left;
@@ -691,7 +725,8 @@ activities
 .photo-item img{
     float: left;
     left: 0%;
-    width: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 .icover{

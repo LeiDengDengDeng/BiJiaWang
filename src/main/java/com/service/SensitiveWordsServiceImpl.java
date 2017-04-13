@@ -2,6 +2,7 @@ package com.service;
 
 import com.model.SensitiveEntity;
 import com.repository.SensitiveRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Service("shieldWordsService")
 @Transactional
 public class SensitiveWordsServiceImpl implements SensitiveWordsService {
+    @Autowired
     SensitiveRepository sensitiveRepository;
 
     @Override

@@ -6,6 +6,7 @@ package com.service;
 
 import com.model.SynonymsEntity;
 import com.repository.SynonymsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @Transactional
 public class SynonymsServiceImpl implements SynonymsService {
 
+    @Autowired
     SynonymsRepository synonymsRepository;
 
     @Override
