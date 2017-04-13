@@ -34,4 +34,9 @@ public class SearchServiceImpl implements SearchService{
             return goodEntities;
 
     }
+    public static void main(String[] args){
+        SearchServiceImpl searchService=new SearchServiceImpl();
+        String[] s={"iphone"};
+        searchService.analyse(s);
+    }
 }

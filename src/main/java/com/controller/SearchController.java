@@ -5,10 +5,10 @@ import com.model.GoodEntity;
 import com.service.SearchService;
 import com.service.ShieldService;
 import com.service.SortService;
+import com.service.SynonymsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -29,10 +29,13 @@ public class SearchController {
     @Autowired
     private ShieldService shieldService;
 
+    @Autowired
+    private SynonymsService synonymsService;
+
     @ResponseBody
-    @RequestMapping(value="/search",method = RequestMethod.POST)
+    @RequestMapping(value="/search")
     public List<GoodEntity> searchGoods(String keyword){
-        //todo 从同义词列表获取同义词
+        //从同义词列表获取同义词
         String[] keywords=null;
 
         //将列表中的所有词交给analyse分析
@@ -45,7 +48,7 @@ public class SearchController {
 
     }
     @ResponseBody
-    @RequestMapping(value="/sort",method = RequestMethod.POST)
+    @RequestMapping(value="/sort")
     public List<GoodEntity> sortGoods(List<GoodEntity> goodEntities,SortStrategy sortStrategy) {
         //将搜索获得的商品进行排序
         goodEntities = sortService.sort(goodEntities, sortStrategy);
