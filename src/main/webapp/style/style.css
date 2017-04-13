@@ -289,6 +289,33 @@ activities
     -moz-box-shadow: 0 0 7px #79BD9A;
 }
 
+.search-holder a{
+    text-align: center;
+    width: 100%;
+    font-size: 56px;
+    color: #DE7E73;
+    margin-bottom: 20px;
+}
+
+.search-holder h6{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    color: #DE7E73;
+    /*background-color: greenyellow;*/
+}
+
+.server-text{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    color: #99cd99;
+    /*background-color: greenyellow;*/
+}
+
+
 .search-holder-button {
     position: relative;
     float: left;
@@ -478,16 +505,43 @@ activities
 }
 
 .activity-head-holder h1{
+    /*width: auto;*/
     font-size: 19px;
     font-weight: 300;
     line-height: 25px;
+    width: auto;
+    /*background-color: goldenrod;*/
 }
 
 .activity-head-holder h4{
+    float: left;
+    /*width: 100%;*/
     font-size: 14px;
     font-weight: 300;
     line-height: 25px;
     color: grey;
+    margin-right: 10px;
+    /*background-color: #99cd99;*/
+}
+
+.activity-head-holder a{
+    cursor: pointer;
+    float: left;
+    /*width: 100%;*/
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 25px;
+    color: grey;
+    margin-right: 10px;
+    /*background-color: #99cd99;*/
+}
+
+.activity-head-holder p{
+    float: left;
+    margin-left: 0px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 300;
 }
 
 .activity-time-address-holder{
@@ -507,14 +561,33 @@ activities
     color: grey;
 }
 
+.details-holder{
+    position: relative;
+    float: right;
+    top:5%;
+    right: 5%;
+    width: 55%;
+    margin-top: 10px;
+    height: 50%;
+    /*background-color: green;*/
+}
+
+.details-holder p{
+    position: relative;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .photo-holder{
     position: relative;
     float: left;
     top:5%;
     left: 5%;
-    width: 90%;
+    width: 30%;
     margin-top: 10px;
-    /*height: 30%;*/
+    height: 50%;
     /*background-color: green;*/
 }
 
@@ -524,7 +597,14 @@ activities
     top:5%;
     /*left: 5%;*/
     margin-right: 0.3%;
-    width: 33%;
+    width: 200px;
+    /*background-color: goldenrod;*/
+}
+
+.photo-item img{
+    float: left;
+    left: 0%;
+    width: 200px;
 }
 
 .icover{
@@ -546,14 +626,8 @@ activities
     -ms-transition: .3s;
 }
 
-.photo-item img{
-    float: left;
-    left: 0%;
-    width: 100%;
-}
-
 .price-text{
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
     color:#DE7E73;
 }
@@ -603,11 +677,12 @@ activities
 
 .goods-description{
     position: relative;
-    float: left;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 10%;
+    float: right;
+    top: -5%;
+    left: 1%;
+    width: 60%;
+    margin-top: -5%;
+    /*height: 10%;*/
     padding-top: 10px;
     /*background-color: green;*/
 }

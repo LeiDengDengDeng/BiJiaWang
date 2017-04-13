@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Created by disinuo on 17/3/26.
  */
-public class SortCommand extends Command {
+public class SortGoodsCommand extends Command {
     @Autowired
     private SortService sortService;
     private List<GoodEntity> goodEntities;
@@ -25,7 +25,7 @@ public class SortCommand extends Command {
         return null;
     }
 
-    public SortCommand(List<GoodEntity> goodEntities,SortStrategy sortStrategy){
+    public SortGoodsCommand(List<GoodEntity> goodEntities, SortStrategy sortStrategy){
         this.goodEntities=goodEntities;
         this.sortStrategy=sortStrategy;
         args.put("goodEntities",goodEntities);
@@ -35,6 +35,6 @@ public class SortCommand extends Command {
     public List<GoodEntity> getGoodEntities(){return goodEntities;}
     @Override
     protected void initCommandId() {
-        commandId="service.commands.SortCommand";
+        commandId="service.commands.SortGoodsCommand";
     }
 }

@@ -11,7 +11,10 @@ public interface GoodRepository extends JpaRepository<GoodEntity,Integer> {
 
 
     @Transactional
-    @Query("select '*' from GoodEntity where GoodEntity .name=?1")
-    String searchGood(String goodName);
+    @Query("select good from GoodEntity good where good.name=?1")
+    GoodEntity searchGood(String goodName);
+
+    @Query("select good from GoodEntity good where good.detail=?1")
+    GoodEntity searchGoodByDetail(String goodDetail);
 
 }

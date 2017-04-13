@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="author" content="Script Tutorials" />
-        <title>注册-HostelWorld</title>
+        <title>您已在黑名单上-爱比价网</title>
 
         <link href="style/main.css" rel="stylesheet" type="text/css" />
         <link href="style/style.css" rel="stylesheet" type="text/css" />
@@ -12,6 +12,8 @@
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/activity.js"></script>
 
 
     </head>
@@ -46,83 +48,24 @@
                 </span>
         </ul>
     </div>
-
-    <!--小三角，勿删-->
-        <div class="menu-triangle menu-triangle-five triangle"></div>
+        <!--小三角，勿删-->
+        <div class="menu-triangle menu-triangle-one triangle"></div>
         <!--小三角结束，正文开始-->
 
         <div class="all-elements">
-
-            <div class="activity-holder thin-forty">
-
-                <!--<div class="per-activity width-ninety">-->
-
-                <!--</div>-->
-                <div class="per-input width-ninety">
-                    <p>用户名</p>
-                    <input type="text" id="userName">
-                </div>
-
-                <div class="per-input width-ninety">
-                    <p>电话</p>
-                    <input type="text" id="userTel">
-                </div>
-                <div class="per-input width-ninety">
-                    <p>电子邮箱</p>
-                    <input type="text" id="userAddress">
-                </div>
-
-                <div class="per-input width-ninety">
-                    <button class="big-bottom-button" onclick="registerUser()">确认注册</button>
-                </div>
-
+            <div class="search-holder">
+               <a class="fa-fa fa-warning"></a>
+                <h6>对不起，您已在黑名单上</h6>
+                <h6>请联系网站管理员查询详情</h6>
             </div>
-
             <div class="footer">
                 <div class="decoration-center"></div>
                 <h1>
-                    Copyright &copy; 2016 - 2017 Hostel World. All Rights Reserved.
+                    Copyright &copy; 2016 - 2017 爱比价. All Rights Reserved.
                 </h1>
             </div>
         </div>
 
-    <script type="text/javascript">
 
-
-
-        function registerUser() {
-//            window.location.href="index.html";
-
-            var userName = document.getElementById("userName");
-            var userPwd = document.getElementById("userPwd");
-            var userTel = document.getElementById("userTel");
-            var userAddress = document.getElementById("userAddress");
-            var userAccount = document.getElementById("userAccount");
-
-
-            $.ajax({
-                url: "/register/"+userName.value,
-                type: "GET",
-                data: {
-                    password:userPwd.value,
-                    tel:userTel.value,
-                    address:userAddress.value,
-                    card:userAccount.value
-
-        },
-                dataType: 'JSON',
-                async: false,
-                success: function (data) {
-                   alert("注册成功！");
-                   window.location.href="/home";
-                }
-            });
-
-
-
-
-            
-        }
-    </script>
     </body>
 </html>
