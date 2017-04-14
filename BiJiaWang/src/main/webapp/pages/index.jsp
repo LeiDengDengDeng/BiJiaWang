@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>登录</title>
-    <link href="style/main.css" rel="stylesheet" type="text/css" />
-    <link href="style/style.css" rel="stylesheet" type="text/css" />
-    <link href="style/material-icons.css" rel="stylesheet" type="text/css" />
-    <link href="style/font-awesome.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/activity.js"></script>
+    <link href="../style/main.css" rel="stylesheet" type="text/css" />
+    <link href="../style/style.css" rel="stylesheet" type="text/css" />
+    <link href="../style/material-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../style/font-awesome.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../js/activity.js"></script>
 
 
 </head>

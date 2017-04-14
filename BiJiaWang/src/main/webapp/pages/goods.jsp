@@ -5,15 +5,14 @@
         <meta name="author" content="Script Tutorials" />
         <title>全部-爱比价网</title>
 
-        <link href="style/main.css" rel="stylesheet" type="text/css" />
-        <link href="style/style.css" rel="stylesheet" type="text/css" />
-        <link href="style/material-icons.css" rel="stylesheet" type="text/css" />
-        <link href="style/font-awesome.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="js/activity.js"></script>
+        <link href="../style/main.css" rel="stylesheet" type="text/css" />
+        <link href="../style/style.css" rel="stylesheet" type="text/css" />
+        <link href="../style/material-icons.css" rel="stylesheet" type="text/css" />
+        <link href="../style/font-awesome.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="../js/activity.js"></script>
 
 
     </head>
