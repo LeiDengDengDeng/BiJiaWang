@@ -33,12 +33,12 @@ public class SynonymsServiceImpl implements SynonymsService {
     }
 
     @Override
-    public List findAll() {
+    public List<SynonymsEntity> findAll() {
         return synonymsRepository.findAll();
     }
 
     @Override
-    public List findSynonyms(String word) {
+    public List<SynonymsEntity> findSynonyms(String word) {
         int groupId=1;
         List<SynonymsEntity> synonymsEntities = synonymsRepository.findAll();
         List<SynonymsEntity> result = new ArrayList<>();
@@ -67,5 +67,12 @@ public class SynonymsServiceImpl implements SynonymsService {
     @Override
     public SynonymsEntity getOne(int id) {
         return synonymsRepository.findOne(id);
+    }
+
+    public static void main(String[] args) {
+        SynonymsServiceImpl synonymsService = new SynonymsServiceImpl();
+        System.out.println(synonymsService.getCount());
+        System.out.println(synonymsService.getOne(2));
+        System.out.println(synonymsService.findAll().size());
     }
 }

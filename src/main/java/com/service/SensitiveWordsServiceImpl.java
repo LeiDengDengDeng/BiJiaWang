@@ -30,7 +30,7 @@ public class SensitiveWordsServiceImpl implements SensitiveWordsService {
     }
 
     @Override
-    public List findAll() {
+    public List<SensitiveEntity> findAll() {
         return sensitiveRepository.findAll();
     }
 

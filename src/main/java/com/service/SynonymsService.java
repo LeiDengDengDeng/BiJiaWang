@@ -13,9 +13,9 @@ public interface SynonymsService {
 
     public boolean deleteSynonyms(SynonymsEntity synonymsEntity);
 
-    public List findAll();
+    public List<SynonymsEntity> findAll();
 
-    public List findSynonyms(String word);
+    public List<SynonymsEntity> findSynonyms(String word);
 
     public int getCount();
 

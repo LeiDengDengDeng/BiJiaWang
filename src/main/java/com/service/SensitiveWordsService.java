@@ -13,7 +13,7 @@ public interface SensitiveWordsService {
 
     public boolean deleteSensitiveWords(SensitiveEntity sensitiveEntity);
 
-    public List findAll();
+    public List<SensitiveEntity> findAll();
 
     public int getCount();
 
