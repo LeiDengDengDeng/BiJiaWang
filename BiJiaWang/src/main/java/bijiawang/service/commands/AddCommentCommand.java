@@ -14,6 +14,7 @@ public class AddCommentCommand extends Command{
     CommentService commentService;
     private CommentEntity comment;
 
+    
 
     @Override
     protected ResultMessage doCommand(){
