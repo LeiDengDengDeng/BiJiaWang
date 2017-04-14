@@ -61,12 +61,35 @@ public class SynonymsServiceImpl implements SynonymsService {
 
     @Override
     public int getCount() {
-        return (int) synonymsRepository.count();
+        List<SynonymsEntity> synonymsEntities = synonymsRepository.findAll();
+        int max_Group = 1;
+        for(int i=0;i<synonymsEntities.size();i++){
+            if(synonymsEntities.get(i).getGroupid() > max_Group)
+                max_Group = synonymsEntities.get(i).getGroupid();
+        }
+        return max_Group;
     }
 
     @Override
     public SynonymsEntity getOne(int id) {
         return synonymsRepository.findOne(id);
+    }
+
+    @Override
+    public List<List<String>> getSynonymsGroup() {
+        int max_Group = getCount();
+        List<SynonymsEntity> synonymsEntities = synonymsRepository.findAll();
+        int size = synonymsEntities.size();
+        List<List<String>> result = new ArrayList<>();
+        for(int i=1;i<=max_Group;i++){
+            List<String> str = new ArrayList<>();
+            for(int j=1;j<size;j++){
+             if(synonymsEntities.get(j).getGroupid()==j)
+                 str.add(synonymsEntities.get(j).getSynonymsWord());
+            }
+            result.add(str);
+        }
+        return result;
     }
 
 //    public static void main(String[] args) {

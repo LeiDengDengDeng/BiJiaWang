@@ -20,4 +20,6 @@ public interface SynonymsService {
     public int getCount();
 
     public SynonymsEntity getOne(int id);
+
+    public List<List<String>> getSynonymsGroup();
 }

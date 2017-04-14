@@ -36,7 +36,8 @@ public class SensitiveWordsServiceImpl implements SensitiveWordsService {
 
     @Override
     public int getCount() {
-        return (int) sensitiveRepository.count();
+        List<SensitiveEntity> sensitiveEntities = sensitiveRepository.findAll();
+        return sensitiveEntities.size();
     }
 
     @Override
