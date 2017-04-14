@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="BiJiaWang:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="BiJiaWang.war">
-      <element id="artifact" artifact-name="BiJiaWang:war exploded" />
-    </root>
-  </artifact>
-</component>
