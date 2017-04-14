@@ -66,45 +66,32 @@
                     操作
                 </div>
             </li>
-            <li>
-                <div class="source-name">
-                    1
-                </div>
-                <div class="goods-price">
-                    王者农药
-                </div>
-                <div class="go-shopping">
-                    <p>删除<a class="fa-fa fa-remove"></a>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="source-name">
-                    1
-                </div>
-                <div class="goods-price">
-                    王者农药
-                </div>
-                <div class="go-shopping">
-                    <p>删除<a class="fa-fa fa-remove"></a>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="source-name">
-                    1
-                </div>
-                <div class="goods-price">
-                    <input class="normal-input">
-                </div>
-                <div class="go-shopping">
-                    <p>删除<a class="fa-fa fa-remove"></a>
-                    </p>
-                </div>
-            </li>
-            <span id="sensitiveWords">
-
-                    </span>
+            <span id="oldSensitive"></span>
+            <!--<li>-->
+                <!--<div class="source-name">-->
+                    <!--1-->
+                <!--</div>-->
+                <!--<div class="goods-price">-->
+                    <!--王者农药-->
+                <!--</div>-->
+                <!--<div class="go-shopping">-->
+                    <!--<p>删除<a class="fa-fa fa-remove"></a>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<div class="source-name">-->
+                    <!--1-->
+                <!--</div>-->
+                <!--<div class="goods-price">-->
+                    <!--<input class="normal-input">-->
+                <!--</div>-->
+                <!--<div class="go-shopping">-->
+                    <!--<p>删除<a class="fa-fa fa-remove"></a>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</li>-->
+            <span id="sensitiveWords"></span>
             <li>
                 <div class="source-name" style="visibility: hidden">
                     11
@@ -130,9 +117,37 @@
 </div>
 
 <script type="text/javascript">
-    function newSensitive() {
-        var sensitiveWords = document.getElementById("sensitiveWords");
+    $(document).ready(function () {
+//        alert("hhh");
+            initPage();
+        }
+    );
 
+
+    function initPage() {
+        var addToHere = document.getElementById("addToHere");
+
+        $.ajax({
+            url: "/getSensitiveWords",
+            type: "GET",
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                $.each(data, function (idx, item) {
+                    addToHere.innerHTML+="<li> <div class='source-name'>"
+                        +item.id+"</div> <div class='goods-price'>"
+                        +item.sensitiveWord
+                        +"</div> <div class='go-shopping' onclick='deleteSensitive(this)' wid="+item.id+"> <p>删除<a class='fa-fa fa-remove'></a>"
+                        +"</p> </div> </li>"
+                });
+            }
+        });
+    }
+    var newInputIndex=0;
+
+    function newSensitive() {
+        newInputIndex++;
+        var sensitiveWords = document.getElementById("sensitiveWords");
         var perLi = document.createElement("li");
         var perNum = document.createElement("div");
         perNum.className="source-name";
@@ -141,20 +156,55 @@
         perWord.className="goods-price";
         var perInput  = document.createElement("input");
         perInput.className="normal-input";
+        perInput.id="input"+newInputIndex;
         perWord.appendChild(perInput);
         var perAction = document.createElement("div");
         perAction.className="go-shopping";
-
         var acitonP = document.createElement("p");
         acitonP.innerHTML = "增加";
+        perAction.wid=newInputIndex;
         perAction.appendChild(acitonP);
-
+        perAction.onclick=function () {
+            addSensitive(this);
+        };
         perLi.appendChild(perNum);
         perLi.appendChild(perWord);
         perLi.appendChild(perAction);
-
         sensitiveWords.appendChild(perLi);
     }
+
+    function addSensitive(btn) {
+        var inputP = document.getElementById("input"+btn.wid);
+        $.ajax({
+            url: "/addSensitiveWords",
+            type: "GET",
+            data:{
+                synonymsWord:inputP.value
+            },
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+
+    function deleteSensitive(btn) {
+        $.ajax({
+            url: "/deleteSensitiveWords",
+            type: "GET",
+            data:{
+                synonymsId:btn.wid
+            },
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                location.reload();
+            }
+        });
+
+    }
+
 </script>
 </body>
 </html>

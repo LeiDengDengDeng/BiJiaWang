@@ -57,90 +57,94 @@
                 <div class="activity-btn-holder">
                     <button class="activity-est activity-btn-selected" id="newestBtn" onclick="activeBtn(this)" active="true">好评率</button>
                     <button class="activity-est activity-btn" id="hotestBtn" onclick="activeBtn(this)" active="false">价格</button>
-                    <input class="normal-input top-search">
-                    <button class="search-holder-button top-search-btn">搜索</button>
+                    <input class="normal-input top-search" id="wordInput">
+                    <button class="search-holder-button top-search-btn" onclick="searchWord()">搜索</button>
 
                     <!--<button class="activity-new activity-btn" id="addBtn">+ 添加活动</button>-->
                 </div>
+                <span id="goodsList">
+
+                </span>
                 <!-- 进入到一个一个活动的部分-->
                 <!-- per-activity 是每一个活动-->
-                <div class="per-activity">
-                    <div class="activity-head-holder">
-                        <h1>科比10总决赛G7球衣</h1>
-                        <h4>淘宝网</h4>
-                    </div>
+                <%--<div class="per-activity">--%>
+                    <%--<div class="activity-head-holder">--%>
+                        <%--<h1>科比10总决赛G7球衣</h1>--%>
+                        <%--<h4>淘宝网</h4>--%>
+                    <%--</div>--%>
 
-                    <div class="full-photo-holder">
-                        <span class="photo-item">
-                             <img src="images/basketball.png">
-                             <span class="icover"></span>
-                        </span>
-                        <div class="activity-description">
-                        <p>最新价格：<span class="price-text">￥5000.00</span></p>
-                        <a href="goodsDetail.html">查看详情</a>
-                        </div>
-                    </div>
+                    <%--<div class="full-photo-holder">--%>
+                        <%--<span class="photo-item">--%>
+                             <%--<img src="images/basketball.png">--%>
+                             <%--<span class="icover"></span>--%>
+                        <%--</span>--%>
+                        <%--<div class="activity-description">--%>
+                        <%--<p>最新价格：<span class="price-text">￥5000.00</span></p>--%>
+                        <%--<a href="goodsDetail.jsp">查看详情</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
 
-                    <!--<div class="per-activity-footer">-->
-                       <!---->
-                    <!--</div>-->
-                </div>
-                <div class="per-activity">
-                    <div class="activity-head-holder">
-                        <h1>科比10总决赛G7球衣</h1>
-                        <h4>淘宝网</h4>
-                    </div>
+                    <%--<!--<div class="per-activity-footer">-->--%>
+                       <%--<!---->--%>
+                    <%--<!--</div>-->--%>
+                <%--</div>--%>
+                <%--<div class="per-activity">--%>
+                    <%--<div class="activity-head-holder">--%>
+                        <%--<h1>科比10总决赛G7球衣</h1>--%>
+                        <%--<h4>淘宝网</h4>--%>
+                    <%--</div>--%>
 
-                    <div class="full-photo-holder">
-                        <span class="photo-item">
-                             <img src="images/basketball.png">
-                             <span class="icover"></span>
-                        </span>
-                    </div>
-                    <div class="activity-description">
-                        <p>最新价格：<span class="price-text">￥5000.00</span></p>
-                        <a href="goodsDetail.html">查看详情</a>
-                    </div>
-                    <!--<div class="per-activity-footer">-->
-                    <!---->
-                    <!--</div>-->
-                </div>
-                <div class="per-activity">
-                    <div class="activity-head-holder">
-                        <h1>科比10总决赛G7球衣</h1>
-                        <h4>淘宝网</h4>
-                    </div>
+                    <%--<div class="full-photo-holder">--%>
+                        <%--<span class="photo-item">--%>
+                             <%--<img src="images/basketball.png">--%>
+                             <%--<span class="icover"></span>--%>
+                        <%--</span>--%>
+                    <%--</div>--%>
+                    <%--<div class="activity-description">--%>
+                        <%--<p>最新价格：<span class="price-text">￥5000.00</span></p>--%>
+                        <%--<a href="goodsDetail.jsp">查看详情</a>--%>
+                    <%--</div>--%>
+                    <%--<!--<div class="per-activity-footer">-->--%>
+                    <%--<!---->--%>
+                    <%--<!--</div>-->--%>
+                <%--</div>--%>
+                <%--<div class="per-activity">--%>
+                <%--<div class="activity-head-holder">--%>
+                    <%--<h1>科比10总决赛G7球衣</h1>--%>
+                    <%--<h4>淘宝网</h4>--%>
+                <%--</div>--%>
 
-                    <div class="full-photo-holder">
-                        <span class="photo-item">
-                             <img src="images/basketball.png">
-                             <span class="icover"></span>
-                        </span>
-                    </div>
-                    <div class="activity-description">
-                        <p>最新价格：<span class="price-text">￥5000.00</span></p>
-                        <a href="goodsDetail.html">查看详情</a>
-                    </div>
-                    <!--<div class="per-activity-footer">-->
-                    <!---->
-                    <!--</div>-->
-                </div>
-                <div class="per-activity">
-                    <div class="activity-head-holder">
-                        <h1>科比10总决赛G7球衣</h1>
-                        <h4>淘宝网</h4>
-                    </div>
+                <%--<div class="full-photo-holder">--%>
+                        <%--<span class="photo-item">--%>
+                             <%--<img src="images/basketball.png">--%>
+                             <%--<span class="icover"></span>--%>
+                        <%--</span>--%>
+                <%--</div>--%>
+                <%--<div class="activity-description">--%>
+                    <%--<p>最新价格：<span class="price-text">￥5000.00</span></p>--%>
+                    <%--<a href="goodsDetail.jsp">查看详情</a>--%>
+                <%--</div>--%>
+                <%--<!--<div class="per-activity-footer">-->--%>
+                <%--<!---->--%>
+                <%--<!--</div>-->--%>
+            <%--</div>--%>
+               <%----%>
+                <%--<div class="per-activity">--%>
+                    <%--<div class="activity-head-holder">--%>
+                        <%--<h1>科比10总决赛G7球衣</h1>--%>
+                        <%--<h4>淘宝网</h4>--%>
+                    <%--</div>--%>
 
-                    <div class="full-photo-holder">
-                        <span class="photo-item">
-                             <img src="images/basketball.png">
-                             <span class="icover"></span>
-                        </span>
-                    </div>
-                    <div class="activity-description">
-                        <p>最新价格：<span class="price-text">￥5000.00</span></p>
-                        <a href="goodsDetail.html">查看详情</a>
-                    </div>
+                    <%--<div class="full-photo-holder">--%>
+                        <%--<span class="photo-item">--%>
+                             <%--<img src="images/basketball.png">--%>
+                             <%--<span class="icover"></span>--%>
+                        <%--</span>--%>
+                    <%--</div>--%>
+                    <%--<div class="activity-description">--%>
+                        <%--<p>最新价格：<span class="price-text">￥5000.00</span></p>--%>
+                        <%--<a href="goodsDetail.jsp">查看详情</a>--%>
+                    <%--</div>--%>
                     <!--<div class="per-activity-footer">-->
                     <!---->
                     <!--</div>-->
@@ -155,6 +159,66 @@
             </div>
         </div>
 
+<script>
+    function searchWord() {
+        var goodsList = document.getElementById("goodsList");
+        var wordInput = document.getElementById("wordInput");
+        $.ajax({
+            url: "/search",
+            type: "POST",
+            data: {
+                keyword: btn.wid
+            },
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                $.each(data, function (idx, item) {
+                    var perGood = document.createElement("div");
+                    perGood.className = "per-activity";
+                    var perGoodHead = document.createElement("div");
+                    perGoodHead.className = "activity-head-holder";
+                    var goodsName = document.createElement("h1");
+                    goodsName.innerHTML = item.name;
+                    perGoodHead.appendChild(goodsName);
 
+                    var goodsDetail = document.createElement("div");
+                    goodsDetail.className = "full-photo-holder";
+
+                    var perPhotoDiv = document.createElement("span");
+                    perPhotoDiv.className = "photo-item";
+                    var perPhoto = document.createElement("img");
+                    perPhoto.src = item.imgUrl;
+                    var icover = document.createElement("span");
+                    icover.className = "icover";
+                    perPhotoDiv.appendChild(perPhoto);
+                    perPhotoDiv.appendChild(icover);
+                    goodsDetail.appendChild(perPhotoDiv);
+                    var perFoot = document.createElement("div");
+                    perFoot.className = "activity-description";
+                    var footP = document.createElement("p");
+                    footP.innerHTML = "最新价格：<span class='price-text'>" + "￥" + item.price + "</span>";
+                    var detailBtn = document.createElement("a");
+                    detailBtn.innerHTML = "查看详情";
+                    detailBtn.gid = item.id;
+                    detailBtn.onclick = function () {
+                        toGoodsDetail(this);
+                    }
+                    perFoot.appendChild(footP);
+                    perFoot.appendChild(detailBtn);
+                    goodsDetail.appendChild(perFoot);
+
+                    perGood.appendChild(perGoodHead);
+                    perGood.appendChild(goodsDetail);
+
+                    goodsList.appendChild(perGood);
+                });
+            }
+        });
+    }
+    function toGoodsDetail(btn) {
+        window.location.href = "goodsDetail.html?goodsId=" + btn.gid;
+    }
+
+</script>
     </body>
 </html>

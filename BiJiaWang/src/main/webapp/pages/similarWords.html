@@ -58,10 +58,11 @@
                 <!--<div class="per-activity width-ninety">-->
 
                 <!--</div>-->
-                <div class="per-textarea width-ninety">
-                    <p>第一组</p>
-                    <textarea id="userName"></textarea>
-                </div>
+                <span id="initGroup"></span>
+                <!--<div class="per-textarea width-ninety">-->
+                    <!--<p>第一组</p>-->
+                    <!--<textarea id="userName"></textarea>-->
+                <!--</div>-->
                 <span id="wordsGroup">
 
                 </span>
@@ -96,6 +97,40 @@
         </div>
 
     <script type="text/javascript">
+        $(document).ready(function () {
+            initPage();
+        });
+
+        function initPage() {
+            var initGroup= document.getElementById("initGroup");
+            $.ajax({
+                url: "/getSynonymsGroup",
+                type: "GET",
+                dataType: 'JSON',
+                async: false,
+                success: function (data) {
+                    for(var i = 0 ;i<data.length;i++){
+                        var perArea  = document.createElement("div");
+                        perArea.className="per-textarea width-ninety";
+                        var areaP = document.createElement("p");
+                        areaP.innerHTML="第"+(i+1)+"组";
+                        var textArea = document.createElement("textarea");
+                        for(var j = 0 ;j<data.data.length;j++){
+                            if(j!=0){
+                                textArea.innerHTML+=";"+data.data[j]
+                            }else{
+                                textArea.innerHTML+=data.data[j]
+                            }
+                        }
+                        perArea.appendChild(areaP);
+                        perArea.appendChild(textArea);
+                        initGroup.appendChild(perArea);
+                    }
+                }
+            });
+        }
+        
+        
         function newGroup() {
             var wordsGroup= document.getElementById("wordsGroup");
                     var perArea  = document.createElement("div");
