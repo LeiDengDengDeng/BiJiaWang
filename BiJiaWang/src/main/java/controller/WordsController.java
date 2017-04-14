@@ -73,5 +73,10 @@ public class WordsController {
         return true;
     }
 
+    @RequestMapping("/getSynonymsGroup")
+    public List<List<String>> getSynonymsGroup(){
+        return  synonymsService.getSynonymsGroup();
+    }
+
 
 }
