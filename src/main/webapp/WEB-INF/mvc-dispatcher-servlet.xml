@@ -56,9 +56,9 @@
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:8889/biJiangWang?useSSL=false</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/biJiangWang?useSSL=false</prop>
                 <prop key="hibernate.connection.username">root</prop>
-                <prop key="hibernate.connection.password">root</prop>
+                <prop key="hibernate.connection.password">liying</prop>
                 <prop key="hibernate.show_sql">false</prop>
                 <prop key="hibernate.connection.useUnicode">true</prop>
                 <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
@@ -88,20 +88,12 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
     <!--json-->
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <bean  class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <ref bean="mappingJackson2HttpMessageConverter" />
-            </list>
-        </property>
-    </bean>
-    <bean id="mappingJackson2HttpMessageConverter"
-          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-        <property name="supportedMediaTypes">
-            <list>
-                <value>application/json;charset=UTF-8</value>
-                <value>text/html;charset=UTF-8</value>
-                <value>text/json;charset=UTF-8</value>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
             </list>
         </property>
     </bean>

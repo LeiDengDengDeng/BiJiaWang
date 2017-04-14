@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Script Tutorials"/>
+    <title>敏感词-HostelWorld</title>
+
+    <link href="style/main.css" rel="stylesheet" type="text/css"/>
+    <link href="style/style.css" rel="stylesheet" type="text/css"/>
+    <link href="style/material-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="style/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+
+
+</head>
+<body>
+<div class="container" id="navigationBar" role="navigation">
+    <ul class="menu">
+        <img src="images/logo.png">
+        <li><a href="index.html">首页</a></li>
+        <li class="active"><a href="goods.html">商品</a>
+            <ul class="submenu">
+                <li><a href="goods.html">所有商品</a></li>
+                <li><a href="myFavorites.html">我的收藏</a></li>
+            </ul>
+        </li>
+        <li><a href="#">模块二</a>
+            <ul class="submenu">
+                <li><a href="#">201</a></li>
+                <li><a href="#">202</a></li>
+                <li><a href="#">203</a></li>
+            </ul>
+        </li>
+        <li><a href="#">模块三</a>
+            <ul class="submenu">
+                <li><a href="#">301</a></li>
+                <li><a href="#">302</a></li>
+            </ul>
+        </li>
+        <li><a href="personal.html">个人信息</a></li>
+        <span class="big-icon navigation-right-icon">
+                    <i class="material-icons">exit_to_app</i>
+                    <i class="fa-middle fa-bell"></i>
+            </span>
+    </ul>
+</div>
+<!--小三角，勿删-->
+<div class="menu-triangle menu-triangle-five triangle"></div>
+<!--小三角结束，正文开始-->
+
+<div class="all-elements">
+
+    <div class="activity-holder thin-forty">
+        <h4 class="goods-detail-head">敏感词汇表</h4>
+        <ul class="goods-compare">
+            <li>
+                <div class="source-head-quater">
+                    编号
+                </div>
+                <div class="source-head-half">
+                    敏感词汇
+                </div>
+                <div class="source-head-quater">
+                    操作
+                </div>
+            </li>
+            <li>
+                <div class="source-name">
+                    1
+                </div>
+                <div class="goods-price">
+                    王者农药
+                </div>
+                <div class="go-shopping">
+                    <p>删除<a class="fa-fa fa-remove"></a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="source-name">
+                    1
+                </div>
+                <div class="goods-price">
+                    王者农药
+                </div>
+                <div class="go-shopping">
+                    <p>删除<a class="fa-fa fa-remove"></a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="source-name">
+                    1
+                </div>
+                <div class="goods-price">
+                    <input class="normal-input">
+                </div>
+                <div class="go-shopping">
+                    <p>删除<a class="fa-fa fa-remove"></a>
+                    </p>
+                </div>
+            </li>
+            <span id="sensitiveWords">
+
+                    </span>
+            <li>
+                <div class="source-name" style="visibility: hidden">
+                    11
+                </div>
+                <div class="goods-price" style="visibility: hidden">
+                    11
+                </div>
+                <div class="go-shopping" onclick="newSensitive()">
+                    <p>新增<span style="font-weight:600">+</span></a>
+                    </p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="footer">
+        <div class="decoration-center"></div>
+        <h1>
+            Copyright &copy; 2016 - 2017 Hostel World. All Rights Reserved.
+        </h1>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function newSensitive() {
+        var sensitiveWords = document.getElementById("sensitiveWords");
+
+        var perLi = document.createElement("li");
+        var perNum = document.createElement("div");
+        perNum.className="source-name";
+        perNum.innerHTML="123"
+        var perWord = document.createElement("div");
+        perWord.className="goods-price";
+        var perInput  = document.createElement("input");
+        perInput.className="normal-input";
+        perWord.appendChild(perInput);
+        var perAction = document.createElement("div");
+        perAction.className="go-shopping";
+
+        var acitonP = document.createElement("p");
+        acitonP.innerHTML = "增加";
+        perAction.appendChild(acitonP);
+
+        perLi.appendChild(perNum);
+        perLi.appendChild(perWord);
+        perLi.appendChild(perAction);
+
+        sensitiveWords.appendChild(perLi);
+    }
+</script>
+</body>
+</html>
