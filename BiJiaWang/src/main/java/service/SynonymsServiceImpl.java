@@ -38,10 +38,10 @@ public class SynonymsServiceImpl implements SynonymsService {
     }
 
     @Override
-    public List<SynonymsEntity> findSynonyms(String word) {
+    public List<String> findSynonyms(String word) {
         int groupId=1;
         List<SynonymsEntity> synonymsEntities = synonymsRepository.findAll();
-        List<SynonymsEntity> result = new ArrayList<>();
+        List<String> result = new ArrayList<>();
         for(int i=0;i<synonymsEntities.size();i++){
             if(synonymsEntities.get(i).getSynonymsWord().equals(word)){
                 groupId = synonymsEntities.get(i).getGroupid();
@@ -51,7 +51,7 @@ public class SynonymsServiceImpl implements SynonymsService {
 
         for (int i=0;i<synonymsEntities.size();i++){
             if(synonymsEntities.get(i).getGroupid()== groupId){
-                result.add(synonymsEntities.get(i));
+                result.add(synonymsEntities.get(i).getSynonymsWord());
                 continue;
             }
         }
@@ -69,10 +69,10 @@ public class SynonymsServiceImpl implements SynonymsService {
         return synonymsRepository.findOne(id);
     }
 
-    public static void main(String[] args) {
-        SynonymsServiceImpl synonymsService = new SynonymsServiceImpl();
-        System.out.println(synonymsService.getCount());
-        System.out.println(synonymsService.getOne(2));
-        System.out.println(synonymsService.findAll().size());
-    }
+//    public static void main(String[] args) {
+//        SynonymsServiceImpl synonymsService = new SynonymsServiceImpl();
+//        System.out.println(synonymsService.getCount());
+//        System.out.println(synonymsService.getOne(2));
+//        System.out.println(synonymsService.findAll().size());
+//    }
 }
