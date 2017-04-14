@@ -9,9 +9,15 @@ import java.util.List;
  */
 public interface SynonymsService {
 
-    boolean addSynonyms(SynonymsEntity synonymsEntity);
+    public boolean addSynonyms(SynonymsEntity synonymsEntity);
 
-    boolean deleteSynonyms(SynonymsEntity synonymsEntity);
+    public boolean deleteSynonyms(SynonymsEntity synonymsEntity);
 
-    List findAll();
+    public List<SynonymsEntity> findAll();
+
+    public List<SynonymsEntity> findSynonyms(String word);
+
+    public int getCount();
+
+    public SynonymsEntity getOne(int id);
 }
